@@ -22,6 +22,6 @@ jobs:
     # shell 이용해서 하나의 command 수행
     - name: Start xcode build 🛠
       run: |
-        xcodebuild clean test -project YourCourse/YourCourse.xcodeproj \
+        xcodebuild clean test -project YourCourse.xcodeproj \
         -scheme YourCourse \
         -destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=latest'
