@@ -24,4 +24,4 @@ jobs:
       run: |
         xcodebuild clean test -project YourCourse.xcodeproj \
         -scheme YourCourse \
-        -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.0'
+        -destination 'platform:iOS Simulator, id:948EB4DC-22AF-4F28-97AA-160EDC5FB6E2, OS:16.2, name:iPhone 14 Pro'
