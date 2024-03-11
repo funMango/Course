@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */; };
-		5AB2BCBE2B9C097700EC20E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBD2B9C097700EC20E9 /* ContentView.swift */; };
 		5AB2BCC02B9C097800EC20E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */; };
 		5AB2BCC32B9C097800EC20E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCC22B9C097800EC20E9 /* Preview Assets.xcassets */; };
 		5AB2BCCD2B9C097800EC20E9 /* YourCourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCCC2B9C097800EC20E9 /* YourCourseTests.swift */; };
 		5AB2BCD72B9C097800EC20E9 /* YourCourseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCD62B9C097800EC20E9 /* YourCourseUITests.swift */; };
 		5AB2BCD92B9C097800EC20E9 /* YourCourseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCD82B9C097800EC20E9 /* YourCourseUITestsLaunchTests.swift */; };
 		5AB2BCE62B9C0C7F00EC20E9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCE52B9C0C7F00EC20E9 /* .gitignore */; };
+		5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCE82B9EA5E000EC20E9 /* TabBarView.swift */; };
+		5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */; };
+		5AB2BCED2B9EA71400EC20E9 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCEC2B9EA71400EC20E9 /* CalendarView.swift */; };
+		5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		5AB2BCB82B9C097700EC20E9 /* YourCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCourseApp.swift; sourceTree = "<group>"; };
-		5AB2BCBD2B9C097700EC20E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AB2BCC22B9C097800EC20E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AB2BCC82B9C097800EC20E9 /* YourCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,10 @@
 		5AB2BCD62B9C097800EC20E9 /* YourCourseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCourseUITests.swift; sourceTree = "<group>"; };
 		5AB2BCD82B9C097800EC20E9 /* YourCourseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCourseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5AB2BCE52B9C0C7F00EC20E9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5AB2BCE82B9EA5E000EC20E9 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		5AB2BCEC2B9EA71400EC20E9 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +102,8 @@
 		5AB2BCBA2B9C097700EC20E9 /* YourCourse */ = {
 			isa = PBXGroup;
 			children = (
+				5AB2BCE72B9EA5C600EC20E9 /* Views */,
 				5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */,
-				5AB2BCBD2B9C097700EC20E9 /* ContentView.swift */,
 				5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */,
 				5AB2BCC12B9C097800EC20E9 /* Preview Content */,
 				5AB2BCE52B9C0C7F00EC20E9 /* .gitignore */,
@@ -128,6 +134,17 @@
 				5AB2BCD82B9C097800EC20E9 /* YourCourseUITestsLaunchTests.swift */,
 			);
 			path = YourCourseUITests;
+			sourceTree = "<group>";
+		};
+		5AB2BCE72B9EA5C600EC20E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2BCE82B9EA5E000EC20E9 /* TabBarView.swift */,
+				5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */,
+				5AB2BCEC2B9EA71400EC20E9 /* CalendarView.swift */,
+				5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AB2BCBE2B9C097700EC20E9 /* ContentView.swift in Sources */,
+				5AB2BCED2B9EA71400EC20E9 /* CalendarView.swift in Sources */,
+				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
+				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
 				5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */,
+				5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
