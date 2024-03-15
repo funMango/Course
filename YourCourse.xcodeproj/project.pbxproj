@@ -16,8 +16,13 @@
 		5AB2BCE62B9C0C7F00EC20E9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCE52B9C0C7F00EC20E9 /* .gitignore */; };
 		5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCE82B9EA5E000EC20E9 /* TabBarView.swift */; };
 		5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */; };
-		5AB2BCED2B9EA71400EC20E9 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCEC2B9EA71400EC20E9 /* CalendarView.swift */; };
+		5AB2BCED2B9EA71400EC20E9 /* CalendarCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCEC2B9EA71400EC20E9 /* CalendarCourseView.swift */; };
 		5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */; };
+		5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCF12B9EAD8C00EC20E9 /* LargeTitleText.swift */; };
+		5AB2BCF52B9EB60E00EC20E9 /* SwiftUICalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */; };
+		5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */; };
+		5AE979282B9F3FE500C65C13 /* CalendarCourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */; };
+		5AE9792C2B9F441300C65C13 /* CaledarMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +55,12 @@
 		5AB2BCE52B9C0C7F00EC20E9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5AB2BCE82B9EA5E000EC20E9 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
-		5AB2BCEC2B9EA71400EC20E9 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		5AB2BCEC2B9EA71400EC20E9 /* CalendarCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCourseView.swift; sourceTree = "<group>"; };
 		5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		5AB2BCF12B9EAD8C00EC20E9 /* LargeTitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitleText.swift; sourceTree = "<group>"; };
+		5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCourseListView.swift; sourceTree = "<group>"; };
+		5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaledarMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB2BCF52B9EB60E00EC20E9 /* SwiftUICalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +89,131 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AB0ACC32BA50B1C001078FE /* Presents */ = {
+			isa = PBXGroup;
+			children = (
+				5AB0ACCD2BA50C21001078FE /* Archive */,
+				5AB0ACC82BA50BCA001078FE /* Course */,
+				5AE979242B9F3F2400C65C13 /* Calendar */,
+				5AB2BCE82B9EA5E000EC20E9 /* TabBarView.swift */,
+			);
+			path = Presents;
+			sourceTree = "<group>";
+		};
+		5AB0ACC42BA50B3A001078FE /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		5AB0ACC52BA50B61001078FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AB0ACC62BA50B6B001078FE /* Screen */,
+				5AB0ACC72BA50B74001078FE /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5AB0ACC62BA50B6B001078FE /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		5AB0ACC72BA50B74001078FE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2BCEC2B9EA71400EC20E9 /* CalendarCourseView.swift */,
+				5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */,
+				5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5AB0ACC82BA50BCA001078FE /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				5AB0ACCA2BA50BE1001078FE /* Reducer */,
+				5AB0ACC92BA50BD3001078FE /* View */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		5AB0ACC92BA50BD3001078FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AB0ACCB2BA50BF0001078FE /* Screen */,
+				5AB0ACCC2BA50BFC001078FE /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5AB0ACCA2BA50BE1001078FE /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		5AB0ACCB2BA50BF0001078FE /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		5AB0ACCC2BA50BFC001078FE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5AB0ACCD2BA50C21001078FE /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				5AB0ACCF2BA50C34001078FE /* Reducer */,
+				5AB0ACCE2BA50C29001078FE /* View */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
+		5AB0ACCE2BA50C29001078FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AB0ACD12BA50C49001078FE /* Components */,
+				5AB0ACD02BA50C40001078FE /* Screen */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5AB0ACCF2BA50C34001078FE /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		5AB0ACD02BA50C40001078FE /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		5AB0ACD12BA50C49001078FE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5AB2BCAF2B9C097700EC20E9 = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +237,8 @@
 		5AB2BCBA2B9C097700EC20E9 /* YourCourse */ = {
 			isa = PBXGroup;
 			children = (
-				5AB2BCE72B9EA5C600EC20E9 /* Views */,
+				5AB0ACC32BA50B1C001078FE /* Presents */,
+				5AB2BCF02B9EAD7200EC20E9 /* UIElement */,
 				5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */,
 				5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */,
 				5AB2BCC12B9C097800EC20E9 /* Preview Content */,
@@ -136,15 +272,21 @@
 			path = YourCourseUITests;
 			sourceTree = "<group>";
 		};
-		5AB2BCE72B9EA5C600EC20E9 /* Views */ = {
+		5AB2BCF02B9EAD7200EC20E9 /* UIElement */ = {
 			isa = PBXGroup;
 			children = (
-				5AB2BCE82B9EA5E000EC20E9 /* TabBarView.swift */,
-				5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */,
-				5AB2BCEC2B9EA71400EC20E9 /* CalendarView.swift */,
-				5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */,
+				5AB2BCF12B9EAD8C00EC20E9 /* LargeTitleText.swift */,
 			);
-			path = Views;
+			path = UIElement;
+			sourceTree = "<group>";
+		};
+		5AE979242B9F3F2400C65C13 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				5AB0ACC52BA50B61001078FE /* View */,
+				5AB0ACC42BA50B3A001078FE /* Reducer */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +305,9 @@
 			dependencies = (
 			);
 			name = YourCourse;
+			packageProductDependencies = (
+				5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */,
+			);
 			productName = YourCourse;
 			productReference = 5AB2BCB82B9C097700EC20E9 /* YourCourse.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +380,9 @@
 				Base,
 			);
 			mainGroup = 5AB2BCAF2B9C097700EC20E9;
+			packageReferences = (
+				5AB2BCF32B9EB60E00EC20E9 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */,
+			);
 			productRefGroup = 5AB2BCB92B9C097700EC20E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -278,7 +426,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AB2BCED2B9EA71400EC20E9 /* CalendarView.swift in Sources */,
+				5AB2BCED2B9EA71400EC20E9 /* CalendarCourseView.swift in Sources */,
+				5AE9792C2B9F441300C65C13 /* CaledarMainView.swift in Sources */,
+				5AE979282B9F3FE500C65C13 /* CalendarCourseListView.swift in Sources */,
+				5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */,
+				5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */,
 				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
 				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
 				5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */,
@@ -608,6 +760,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5AB2BCF32B9EB60E00EC20E9 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GGJJack/SwiftUICalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.14;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AB2BCF32B9EB60E00EC20E9 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */;
+			productName = SwiftUICalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5AB2BCB02B9C097700EC20E9 /* Project object */;
 }
