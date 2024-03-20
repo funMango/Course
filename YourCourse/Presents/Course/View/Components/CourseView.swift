@@ -35,27 +35,27 @@ struct CourseView: View {
                 
             }
             .toolbar() {
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                    }
-                    
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-                
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        
-                    } label: {
-                        Text("편집")
-                    }
-                }
+//                ToolbarItemGroup(placement: .topBarTrailing) {
+//                    Button {
+//                        
+//                    } label: {
+//                        Image(systemName: "magnifyingglass")
+//                    }
+//                    
+//                    Button {
+//                        
+//                    } label: {
+//                        Image(systemName: "plus")
+//                    }
+//                }
+//                
+//                ToolbarItem(placement: .topBarLeading) {
+//                    Button {
+//                        
+//                    } label: {
+//                        Text("편집")
+//                    }
+//                }
             }
         }
     }

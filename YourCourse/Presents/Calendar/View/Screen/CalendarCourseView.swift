@@ -70,14 +70,14 @@ struct CalendarCourseView: View {
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        print("Tap plus button")
-                        showAddCourseView.toggle()
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
+//                ToolbarItem(placement: .topBarTrailing) {
+//                    Button {
+//                        print("Tap plus button")
+//                        showAddCourseView.toggle()
+//                    } label: {
+//                        Image(systemName: "plus")
+//                    }
+//                }
             }
             .sheet(isPresented: $showAddCourseView) {
                 AddCourseView()
