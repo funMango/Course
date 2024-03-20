@@ -72,7 +72,7 @@ struct AddCourseView: View {
                         Text("취소")
                             .foregroundStyle(.red)
                     }
-                }
+                }                                
             }
         }
     }

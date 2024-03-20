@@ -35,19 +35,17 @@ struct CourseView: View {
                 
             }
             .toolbar() {
-                ToolbarItem(placement: .topBarTrailing) {
-                    HStack {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "magnifyingglass")
-                        }
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    Button {
                         
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "plus")
-                        }
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus")
                     }
                 }
                 
@@ -63,6 +61,6 @@ struct CourseView: View {
     }
 }
 
-//#Preview {
-//    CourseView()
-//}
+#Preview {
+    CourseView()
+}
