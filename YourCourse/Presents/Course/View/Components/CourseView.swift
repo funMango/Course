@@ -61,6 +61,6 @@ struct CourseView: View {
     }
 }
 
-#Preview {
-    CourseView()
-}
+//#Preview {
+//    CourseView()
+//}
