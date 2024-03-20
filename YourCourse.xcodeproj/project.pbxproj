@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A087BFF2BAA656D006E2676 /* CourseDate.swift */; };
 		5A087C022BAA67A6006E2676 /* CourseDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A087C012BAA67A6006E2676 /* CourseDateTests.swift */; };
+		5A087C072BAAB4D6006E2676 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5A087C062BAAB4D6006E2676 /* ComposableArchitecture */; };
 		5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */; };
 		5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */; };
 		5AB2BCC02B9C097800EC20E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A087C072BAAB4D6006E2676 /* ComposableArchitecture in Frameworks */,
 				5AB2BCF52B9EB60E00EC20E9 /* SwiftUICalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +350,7 @@
 			name = YourCourse;
 			packageProductDependencies = (
 				5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */,
+				5A087C062BAAB4D6006E2676 /* ComposableArchitecture */,
 			);
 			productName = YourCourse;
 			productReference = 5AB2BCB82B9C097700EC20E9 /* YourCourse.app */;
@@ -423,6 +426,7 @@
 			mainGroup = 5AB2BCAF2B9C097700EC20E9;
 			packageReferences = (
 				5AB2BCF32B9EB60E00EC20E9 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */,
+				5A087C052BAAB4D6006E2676 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 5AB2BCB92B9C097700EC20E9 /* Products */;
 			projectDirPath = "";
@@ -806,6 +810,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A087C052BAAB4D6006E2676 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
 		5AB2BCF32B9EB60E00EC20E9 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/GGJJack/SwiftUICalendar";
@@ -817,6 +829,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A087C062BAAB4D6006E2676 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A087C052BAAB4D6006E2676 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
 		5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AB2BCF32B9EB60E00EC20E9 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */;
