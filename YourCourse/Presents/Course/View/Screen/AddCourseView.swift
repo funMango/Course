@@ -53,26 +53,26 @@ struct AddCourseView: View {
                 }
             }
             .toolbar {
-//                ToolbarItem(placement: .principal) {
-//                    Text("새로운 코스")
-//                }
-//                
-//                ToolbarItem(placement: .topBarTrailing) {
-//                    Button {
-//                        print("Tap 추가 버튼")
-//                    } label: {
-//                        Text("추가")
-//                    }
-//                }
-//                
-//                ToolbarItem(placement: .topBarLeading) {
-//                    Button {
-//                        print("Tap 취소 버튼")
-//                    } label: {
-//                        Text("취소")
-//                            .foregroundStyle(.red)
-//                    }
-//                }                                
+                ToolbarItem(placement: .principal) {
+                    Text("새로운 코스")
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        print("Tap 추가 버튼")
+                    } label: {
+                        Text("추가")
+                    }
+                }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        print("Tap 취소 버튼")
+                    } label: {
+                        Text("취소")
+                            .foregroundStyle(.red)
+                    }
+                }                                
             }
         }
     }
