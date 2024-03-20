@@ -26,8 +26,3 @@ jobs:
         xcodebuild clean test -project YourCourse.xcodeproj \
         -scheme YourCourse \
         -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=latest'
-
-    - uses: kishikawakatsumi/xcresulttool@v1
-        with:
-          path: TestResults.xcresult
-        if: success() || failure()
