@@ -14,8 +14,13 @@ struct CalendarCourseView: View {
     var informations = [YearMonthDay: [(String, Color)]]()
     @State var focusDate: YearMonthDay? = nil
     @State var focusInfo: [(String, Color)]? = nil
+    @State var showAddCourseView = false
 
     init() {
+//        var ex = YearMonthDay(year: 2024, month: 3, day: 15)
+//        informations[ex] = []
+//        informations[ex]?.append(("Hello", Color.orange))
+        
         var date = YearMonthDay.current
         informations[date] = []
         informations[date]?.append(("Hello", Color.orange))
@@ -64,10 +69,23 @@ struct CalendarCourseView: View {
                         .frame(width: reader.size.width, height: 160, alignment: .center)
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        print("Tap plus button")
+                        showAddCourseView.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $showAddCourseView) {
+                AddCourseView()
+            }
         }
     }
 }
 
-#Preview {
-    CalendarCourseView()
-}
+//#Preview {
+//    CalendarCourseView()
+//}
