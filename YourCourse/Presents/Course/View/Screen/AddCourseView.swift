@@ -53,9 +53,9 @@ struct AddCourseView: View {
                 }
             }
             .toolbar {
-//                ToolbarItem(placement: .principal) {
-//                    Text("새로운 코스")
-//                }
+                ToolbarItem(placement: .principal) {
+                    Text("새로운 코스")
+                }
 //                
 //                ToolbarItem(placement: .topBarTrailing) {
 //                    Button {
