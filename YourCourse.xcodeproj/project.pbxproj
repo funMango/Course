@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A087BFF2BAA656D006E2676 /* CourseDate.swift */; };
+		5A087C022BAA67A6006E2676 /* CourseDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A087C012BAA67A6006E2676 /* CourseDateTests.swift */; };
+		5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */; };
 		5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */; };
 		5AB2BCC02B9C097800EC20E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */; };
 		5AB2BCC32B9C097800EC20E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCC22B9C097800EC20E9 /* Preview Assets.xcassets */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A087BFF2BAA656D006E2676 /* CourseDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDate.swift; sourceTree = "<group>"; };
+		5A087C012BAA67A6006E2676 /* CourseDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDateTests.swift; sourceTree = "<group>"; };
+		5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseView.swift; sourceTree = "<group>"; };
 		5AB2BCB82B9C097700EC20E9 /* YourCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCourseApp.swift; sourceTree = "<group>"; };
 		5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +95,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A087BFD2BAA6549006E2676 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A087BFE2BAA655B006E2676 /* Course */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A087BFE2BAA655B006E2676 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				5A087BFF2BAA656D006E2676 /* CourseDate.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		5A087C032BAA67AC006E2676 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A087C042BAA67B4006E2676 /* Course */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A087C042BAA67B4006E2676 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				5A087C012BAA67A6006E2676 /* CourseDateTests.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
 		5AB0ACC32BA50B1C001078FE /* Presents */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +157,7 @@
 		5AB0ACC62BA50B6B001078FE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */,
+				5AB2BCEC2B9EA71400EC20E9 /* CalendarCourseView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -127,7 +165,7 @@
 		5AB0ACC72BA50B74001078FE /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5AB2BCEC2B9EA71400EC20E9 /* CalendarCourseView.swift */,
+				5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */,
 				5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */,
 				5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */,
 			);
@@ -162,7 +200,7 @@
 		5AB0ACCB2BA50BF0001078FE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */,
+				5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -170,6 +208,7 @@
 		5AB0ACCC2BA50BFC001078FE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -238,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				5AB0ACC32BA50B1C001078FE /* Presents */,
+				5A087BFD2BAA6549006E2676 /* Model */,
 				5AB2BCF02B9EAD7200EC20E9 /* UIElement */,
 				5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */,
 				5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */,
@@ -258,6 +298,7 @@
 		5AB2BCCB2B9C097800EC20E9 /* YourCourseTests */ = {
 			isa = PBXGroup;
 			children = (
+				5A087C032BAA67AC006E2676 /* Model */,
 				5AB2BCCC2B9C097800EC20E9 /* YourCourseTests.swift */,
 			);
 			path = YourCourseTests;
@@ -430,9 +471,11 @@
 				5AE9792C2B9F441300C65C13 /* CaledarMainView.swift in Sources */,
 				5AE979282B9F3FE500C65C13 /* CalendarCourseListView.swift in Sources */,
 				5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */,
+				5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */,
 				5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */,
 				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
 				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
+				5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */,
 				5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */,
 				5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */,
 			);
@@ -442,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A087C022BAA67A6006E2676 /* CourseDateTests.swift in Sources */,
 				5AB2BCCD2B9C097800EC20E9 /* YourCourseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

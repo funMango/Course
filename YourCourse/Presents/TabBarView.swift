@@ -25,6 +25,6 @@ struct TabBarView: View {
     }
 }
 
-#Preview {
-    TabBarView()
-}
+//#Preview {
+//    TabBarView()
+//}
