@@ -65,7 +65,7 @@ struct AddCourseView: View {
                     }
                 }
                 .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarItemGroup(placement: .topBarTrailing) {
                         Button {
                             viewStore.send(.tappedAddButton)
                         } label: {
@@ -73,11 +73,11 @@ struct AddCourseView: View {
                         }
                     }
                     
-                    ToolbarItem(placement: .principal) {
+                    ToolbarItemGroup(placement: .principal) {
                         Text("새로운 코스")
                     }
                     
-                    ToolbarItem(placement: .topBarLeading) {
+                    ToolbarItemGroup(placement: .topBarLeading) {
                         Button {
                             showAddCourseView.toggle()
                         } label: {
