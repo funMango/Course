@@ -6,78 +6,97 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct AddCourseView: View {
-    @State var title = ""
-    @State var location = ""
-    @State var allDay = false
-    @State var startDate = Date()
-    @State var endDate = Date()
-    @State var memo = "메모"
+    @Binding var showAddCourseView: Bool
+    let store: StoreOf<CourseFeature>
     var memoPlaceholder = "메모"
-    
+        
     var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    TextField("제목", text: $title)
-                    TextField("위치", text: $location)
-                }
-                
-                Section {
-                    Toggle(isOn: $allDay) {
-                        Text("하루 종일")
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            NavigationStack {
+                List {
+                    Section {
+                        TextField("제목", text: viewStore.$title)
+                        TextField("위치", text: viewStore.$location)
                     }
                     
-                    if !allDay {
-                        DatePicker(selection: $startDate, in: ...Date(), displayedComponents: .date) {
-                            Text("시작")
+                    Section {
+                        Toggle(isOn: viewStore.$isAllDay) {
+                            Text("하루 종일")
                         }
-                        
-                        DatePicker(selection: $endDate, in: ...Date(), displayedComponents: .date) {
-                            Text("종료")
-                        }
-                    }
-                }
-                
-                Section {
-                    TextEditor(text: $memo)
-                        .foregroundColor(self.memo == memoPlaceholder ? .gray : .primary)
-                        .cornerRadius(15)
-                        .frame(minHeight: 200, maxHeight: 300)
-                        .onTapGesture {
-                            if self.memo == memoPlaceholder {
-                                self.memo = ""
+                                                                            
+                        if !viewStore.isAllDay {
+                            DatePicker(
+                                selection: viewStore.binding(
+                                    get: \.startDate,
+                                    send: CourseFeature.Action.setStartDate
+                                ),
+                                in: Date()...,
+                                displayedComponents: .date
+                            ) {
+                                Text("시작")
+                            }
+                            
+                            DatePicker(
+                                selection: viewStore.binding(
+                                    get: \.endDate,
+                                    send: CourseFeature.Action.setEndDate
+                                ),
+                                in: viewStore.startDate...,
+                                displayedComponents: .date
+                            ) {
+                                Text("종료")
                             }
                         }
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("새로운 코스")
-                }
-                
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        print("Tap 추가 버튼")
-                    } label: {
-                        Text("추가")
+                    }
+                    
+                    Section {
+                        TextEditor(text: viewStore.$memo)
+                            .foregroundColor(viewStore.memo == memoPlaceholder ? .gray : .primary)
+                            .cornerRadius(15)
+                            .frame(minHeight: 200, maxHeight: 300)
+                            .onTapGesture {
+                                if viewStore.memo == memoPlaceholder {
+                                    viewStore.send(.resetMemo)
+                                }
+                            }
                     }
                 }
-                
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        print("Tap 취소 버튼")
-                    } label: {
-                        Text("취소")
-                            .foregroundStyle(.red)
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        Button {
+                            viewStore.send(.tappedAddButton)
+                        } label: {
+                            Text("추가")
+                        }
                     }
-                }                                
+                    
+                    ToolbarItemGroup(placement: .principal) {
+                        Text("새로운 코스")
+                    }
+                    
+                    ToolbarItemGroup(placement: .topBarLeading) {
+                        Button {
+                            showAddCourseView.toggle()
+                        } label: {
+                            Text("취소")
+                                .foregroundStyle(.red)
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-//#Preview {
-//    AddCourseView()
-//}
+struct AddCourseView_Previews: PreviewProvider {
+  static var previews: some View {
+      AddCourseView(showAddCourseView: .constant(true),
+                    store: Store(
+                    initialState: CourseFeature.State(),
+                    reducer: { CourseFeature() })
+                   )
+  }
+}
