@@ -10,6 +10,13 @@
 		5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A087BFF2BAA656D006E2676 /* CourseDate.swift */; };
 		5A087C022BAA67A6006E2676 /* CourseDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A087C012BAA67A6006E2676 /* CourseDateTests.swift */; };
 		5A087C072BAAB4D6006E2676 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5A087C062BAAB4D6006E2676 /* ComposableArchitecture */; };
+		5A56ABBF2BAAFD37006628FF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABBE2BAAFD37006628FF /* FirebaseAnalytics */; };
+		5A56ABC12BAAFD41006628FF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABC02BAAFD41006628FF /* FirebaseAuth */; };
+		5A56ABC72BAAFD4D006628FF /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABC62BAAFD4D006628FF /* FirebaseFirestoreSwift */; };
+		5A56ABCB2BAAFD64006628FF /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABCA2BAAFD64006628FF /* FirebaseDatabaseSwift */; };
+		5A56ABCD2BAAFD87006628FF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABCC2BAAFD87006628FF /* FirebaseStorage */; };
+		5A56ABCF2BAAFE2C006628FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A56ABCE2BAAFE2C006628FF /* GoogleService-Info.plist */; };
+		5A56ABD12BAB0234006628FF /* CourseFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56ABD02BAB0234006628FF /* CourseFeature.swift */; };
 		5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */; };
 		5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */; };
 		5AB2BCC02B9C097800EC20E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */; };
@@ -49,6 +56,8 @@
 /* Begin PBXFileReference section */
 		5A087BFF2BAA656D006E2676 /* CourseDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDate.swift; sourceTree = "<group>"; };
 		5A087C012BAA67A6006E2676 /* CourseDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDateTests.swift; sourceTree = "<group>"; };
+		5A56ABCE2BAAFE2C006628FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A56ABD02BAB0234006628FF /* CourseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseFeature.swift; path = YourCourseTests/CourseFeature.swift; sourceTree = SOURCE_ROOT; };
 		5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseView.swift; sourceTree = "<group>"; };
 		5AB2BCB82B9C097700EC20E9 /* YourCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCourseApp.swift; sourceTree = "<group>"; };
@@ -77,6 +86,11 @@
 			files = (
 				5A087C072BAAB4D6006E2676 /* ComposableArchitecture in Frameworks */,
 				5AB2BCF52B9EB60E00EC20E9 /* SwiftUICalendar in Frameworks */,
+				5A56ABBF2BAAFD37006628FF /* FirebaseAnalytics in Frameworks */,
+				5A56ABCB2BAAFD64006628FF /* FirebaseDatabaseSwift in Frameworks */,
+				5A56ABCD2BAAFD87006628FF /* FirebaseStorage in Frameworks */,
+				5A56ABC72BAAFD4D006628FF /* FirebaseFirestoreSwift in Frameworks */,
+				5A56ABC12BAAFD41006628FF /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +141,13 @@
 				5A087C012BAA67A6006E2676 /* CourseDateTests.swift */,
 			);
 			path = Course;
+			sourceTree = "<group>";
+		};
+		5A56ABBD2BAAFD37006628FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5AB0ACC32BA50B1C001078FE /* Presents */ = {
@@ -195,6 +216,7 @@
 		5AB0ACCA2BA50BE1001078FE /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
+				5A56ABD02BAB0234006628FF /* CourseFeature.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -262,6 +284,7 @@
 				5AB2BCCB2B9C097800EC20E9 /* YourCourseTests */,
 				5AB2BCD52B9C097800EC20E9 /* YourCourseUITests */,
 				5AB2BCB92B9C097700EC20E9 /* Products */,
+				5A56ABBD2BAAFD37006628FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -278,12 +301,13 @@
 		5AB2BCBA2B9C097700EC20E9 /* YourCourse */ = {
 			isa = PBXGroup;
 			children = (
+				5A56ABCE2BAAFE2C006628FF /* GoogleService-Info.plist */,
 				5AB0ACC32BA50B1C001078FE /* Presents */,
 				5A087BFD2BAA6549006E2676 /* Model */,
 				5AB2BCF02B9EAD7200EC20E9 /* UIElement */,
+				5AB2BCC12B9C097800EC20E9 /* Preview Content */,
 				5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */,
 				5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */,
-				5AB2BCC12B9C097800EC20E9 /* Preview Content */,
 				5AB2BCE52B9C0C7F00EC20E9 /* .gitignore */,
 			);
 			path = YourCourse;
@@ -351,6 +375,11 @@
 			packageProductDependencies = (
 				5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */,
 				5A087C062BAAB4D6006E2676 /* ComposableArchitecture */,
+				5A56ABBE2BAAFD37006628FF /* FirebaseAnalytics */,
+				5A56ABC02BAAFD41006628FF /* FirebaseAuth */,
+				5A56ABC62BAAFD4D006628FF /* FirebaseFirestoreSwift */,
+				5A56ABCA2BAAFD64006628FF /* FirebaseDatabaseSwift */,
+				5A56ABCC2BAAFD87006628FF /* FirebaseStorage */,
 			);
 			productName = YourCourse;
 			productReference = 5AB2BCB82B9C097700EC20E9 /* YourCourse.app */;
@@ -427,6 +456,7 @@
 			packageReferences = (
 				5AB2BCF32B9EB60E00EC20E9 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */,
 				5A087C052BAAB4D6006E2676 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				5A56ABBC2BAAFC68006628FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5AB2BCB92B9C097700EC20E9 /* Products */;
 			projectDirPath = "";
@@ -445,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB2BCC32B9C097800EC20E9 /* Preview Assets.xcassets in Resources */,
+				5A56ABCF2BAAFE2C006628FF /* GoogleService-Info.plist in Resources */,
 				5AB2BCE62B9C0C7F00EC20E9 /* .gitignore in Resources */,
 				5AB2BCC02B9C097800EC20E9 /* Assets.xcassets in Resources */,
 			);
@@ -478,6 +509,7 @@
 				5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */,
 				5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */,
 				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
+				5A56ABD12BAB0234006628FF /* CourseFeature.swift in Sources */,
 				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
 				5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */,
 				5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */,
@@ -659,7 +691,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sample.YourCourse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YourCourse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -688,7 +720,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sample.YourCourse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YourCourse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -818,6 +850,14 @@
 				minimumVersion = 1.9.2;
 			};
 		};
+		5A56ABBC2BAAFC68006628FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.23.0;
+			};
+		};
 		5AB2BCF32B9EB60E00EC20E9 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/GGJJack/SwiftUICalendar";
@@ -833,6 +873,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A087C052BAAB4D6006E2676 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		5A56ABBE2BAAFD37006628FF /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A56ABBC2BAAFC68006628FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5A56ABC02BAAFD41006628FF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A56ABBC2BAAFC68006628FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5A56ABC62BAAFD4D006628FF /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A56ABBC2BAAFC68006628FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		5A56ABCA2BAAFD64006628FF /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A56ABBC2BAAFC68006628FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		5A56ABCC2BAAFD87006628FF /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A56ABBC2BAAFC68006628FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 		5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */ = {
 			isa = XCSwiftPackageProductDependency;
