@@ -49,7 +49,7 @@ struct CourseView: View {
                     }
                 }
                 
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItemGroup(placement: .topBarLeading) {
                     Button {
                         
                     } label: {
@@ -61,6 +61,8 @@ struct CourseView: View {
     }
 }
 
-//#Preview {
-//    CourseView()
-//}
+struct CourseView_Previews: PreviewProvider {
+  static var previews: some View {
+      CourseView()
+  }
+}

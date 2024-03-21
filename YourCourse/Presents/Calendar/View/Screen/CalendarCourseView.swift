@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftUICalendar
-
+import ComposableArchitecture
 
 struct CalendarCourseView: View {
     @StateObject var controller: CalendarController = CalendarController()
@@ -70,7 +70,7 @@ struct CalendarCourseView: View {
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItemGroup(placement: .topBarTrailing) {
                     Button {
                         print("Tap plus button")
                         showAddCourseView.toggle()
@@ -80,12 +80,18 @@ struct CalendarCourseView: View {
                 }
             }
             .sheet(isPresented: $showAddCourseView) {
-                AddCourseView()
+                AddCourseView(showAddCourseView: $showAddCourseView, 
+                              store: Store(
+                              initialState: CourseFeature.State(),
+                              reducer: { CourseFeature() })
+                             )
             }
         }
     }
 }
 
-//#Preview {
-//    CalendarCourseView()
-//}
+struct CalendarCourseView_Previews: PreviewProvider {
+  static var previews: some View {
+      CalendarCourseView()
+  }
+}
