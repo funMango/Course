@@ -35,7 +35,7 @@ struct CourseView: View {
                 
             }
             .toolbar() {
-                ToolbarItemGroup(placement: .topBarTrailing) {
+                ToolbarItemGroup {
                     Button {
                         
                     } label: {
@@ -49,7 +49,7 @@ struct CourseView: View {
                     }
                 }
                 
-                ToolbarItemGroup(placement: .topBarLeading) {
+                ToolbarItem(placement: .topBarLeading) {
                     Button {
                         
                     } label: {

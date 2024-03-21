@@ -70,7 +70,7 @@ struct CalendarCourseView: View {
                 }
             }
             .toolbar {
-                ToolbarItemGroup(placement: .topBarTrailing) {
+                ToolbarItem {
                     Button {
                         print("Tap plus button")
                         showAddCourseView.toggle()
