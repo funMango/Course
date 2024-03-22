@@ -65,26 +65,26 @@ struct AddCourseView: View {
                     }
                 }
                 .toolbar {
-                    ToolbarItemGroup(placement: .topBarTrailing) {
-                        Button {
-                            viewStore.send(.tappedAddButton)
-                        } label: {
-                            Text("추가")
-                        }
-                    }
-                    
-                    ToolbarItemGroup(placement: .principal) {
-                        Text("새로운 코스")
-                    }
-                    
-                    ToolbarItemGroup(placement: .topBarLeading) {
-                        Button {
-                            showAddCourseView.toggle()
-                        } label: {
-                            Text("취소")
-                                .foregroundStyle(.red)
-                        }
-                    }
+//                    ToolbarItemGroup(placement: .topBarTrailing) {
+//                        Button {
+//                            viewStore.send(.tappedAddButton)
+//                        } label: {
+//                            Text("추가")
+//                        }
+//                    }
+//                    
+//                    ToolbarItemGroup(placement: .principal) {
+//                        Text("새로운 코스")
+//                    }
+//                    
+//                    ToolbarItemGroup(placement: .topBarLeading) {
+//                        Button {
+//                            showAddCourseView.toggle()
+//                        } label: {
+//                            Text("취소")
+//                                .foregroundStyle(.red)
+//                        }
+//                    }
                 }
             }
         }
