@@ -35,6 +35,7 @@
 		5AD102132BAD7C0000932A2B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102122BAD7C0000932A2B /* Course.swift */; };
 		5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102182BAEA26400932A2B /* DateSectionView.swift */; };
 		5AD1021D2BAEBCB400932A2B /* TitleLocationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */; };
+		5AD1021F2BAEBE1E00932A2B /* MemoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1021E2BAEBE1E00932A2B /* MemoSectionView.swift */; };
 		5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */; };
 		5AE979282B9F3FE500C65C13 /* CalendarCourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */; };
 		5AE9792C2B9F441300C65C13 /* CaledarMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */; };
@@ -82,6 +83,7 @@
 		5AD102122BAD7C0000932A2B /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		5AD102182BAEA26400932A2B /* DateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionView.swift; sourceTree = "<group>"; };
 		5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLocationSectionView.swift; sourceTree = "<group>"; };
+		5AD1021E2BAEBE1E00932A2B /* MemoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoSectionView.swift; sourceTree = "<group>"; };
 		5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCourseListView.swift; sourceTree = "<group>"; };
 		5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaledarMainView.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				5AD102182BAEA26400932A2B /* DateSectionView.swift */,
 				5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */,
+				5AD1021E2BAEBE1E00932A2B /* MemoSectionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */,
 				5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */,
 				5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */,
+				5AD1021F2BAEBE1E00932A2B /* MemoSectionView.swift in Sources */,
 				5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

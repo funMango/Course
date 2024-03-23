@@ -13,7 +13,6 @@ struct AddCourseView: View {
     @FocusState private var isFocused: Bool
     @State private var isPlusBtnDisable = true
     let store: StoreOf<CourseFeature>
-    var memoPlaceholder = "메모"
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -23,19 +22,7 @@ struct AddCourseView: View {
                     
                     DateSectionView(store: self.store)
                                         
-                    Section {
-                        TextEditor(text: viewStore.$memo)
-                            .foregroundColor(viewStore.memo == memoPlaceholder ? .gray : .primary)
-                            .cornerRadius(15)
-                            .frame(minHeight: 200, maxHeight: 300)
-                            .focused($isFocused)
-                            .autocorrectionDisabled()
-                            .onTapGesture {
-                                if viewStore.memo == memoPlaceholder {
-                                    viewStore.send(.resetMemo)
-                                }
-                            }
-                    }
+                    MemoSectionView(store: self.store, isFocused: $isFocused)
                 }
                 .onChange(of: viewStore.$isSavedCourse) { _ in
                     if viewStore.isSavedCourse {
