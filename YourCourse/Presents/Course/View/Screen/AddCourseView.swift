@@ -11,6 +11,7 @@ import ComposableArchitecture
 struct AddCourseView: View {
     @Binding var showAddCourseView: Bool
     @FocusState private var isFocused: Bool
+    @State private var isPlusBtnDisable = true
     let store: StoreOf<CourseFeature>
     var memoPlaceholder = "메모"
         
@@ -78,6 +79,9 @@ struct AddCourseView: View {
                         showAddCourseView = false
                     }
                 }
+                .onChange(of: viewStore.$title) { _ in
+                    isPlusBtnDisable = viewStore.title.isEmpty ? true : false
+                }
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
                         Button {
@@ -85,6 +89,7 @@ struct AddCourseView: View {
                         } label: {
                             Text("추가")
                         }
+                        .disabled(isPlusBtnDisable)
                     }
                     
                     ToolbarItemGroup(placement: .principal) {
