@@ -33,6 +33,8 @@
 		5AB2BCF52B9EB60E00EC20E9 /* SwiftUICalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */; };
 		5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102102BAD7A7100932A2B /* FirestoreAPIClient.swift */; };
 		5AD102132BAD7C0000932A2B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102122BAD7C0000932A2B /* Course.swift */; };
+		5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102182BAEA26400932A2B /* DateSectionView.swift */; };
+		5AD1021D2BAEBCB400932A2B /* TitleLocationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */; };
 		5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */; };
 		5AE979282B9F3FE500C65C13 /* CalendarCourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */; };
 		5AE9792C2B9F441300C65C13 /* CaledarMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */; };
@@ -78,6 +80,8 @@
 		5AB2BCF12B9EAD8C00EC20E9 /* LargeTitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitleText.swift; sourceTree = "<group>"; };
 		5AD102102BAD7A7100932A2B /* FirestoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAPIClient.swift; sourceTree = "<group>"; };
 		5AD102122BAD7C0000932A2B /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		5AD102182BAEA26400932A2B /* DateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionView.swift; sourceTree = "<group>"; };
+		5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLocationSectionView.swift; sourceTree = "<group>"; };
 		5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCourseListView.swift; sourceTree = "<group>"; };
 		5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaledarMainView.swift; sourceTree = "<group>"; };
@@ -237,7 +241,8 @@
 		5AB0ACCC2BA50BFC001078FE /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */,
+				5AD102182BAEA26400932A2B /* DateSectionView.swift */,
+				5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				5AD1020F2BAD7A2B00932A2B /* Dependency */,
 				5AB2BCF02B9EAD7200EC20E9 /* UIElement */,
 				5AB2BCC12B9C097800EC20E9 /* Preview Content */,
+				5AD102172BAEA23E00932A2B /* Useless */,
 				5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */,
 				5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */,
 				5AB2BCE52B9C0C7F00EC20E9 /* .gitignore */,
@@ -367,6 +373,14 @@
 			children = (
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		5AD102172BAEA23E00932A2B /* Useless */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */,
+			);
+			path = Useless;
 			sourceTree = "<group>";
 		};
 		5AE979242B9F3F2400C65C13 /* Calendar */ = {
@@ -528,6 +542,7 @@
 				5AE9792C2B9F441300C65C13 /* CaledarMainView.swift in Sources */,
 				5AE979282B9F3FE500C65C13 /* CalendarCourseListView.swift in Sources */,
 				5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */,
+				5AD1021D2BAEBCB400932A2B /* TitleLocationSectionView.swift in Sources */,
 				5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */,
 				5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */,
 				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
@@ -536,6 +551,7 @@
 				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
 				5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */,
 				5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */,
+				5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */,
 				5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */,
 				5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */,
 			);

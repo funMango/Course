@@ -19,41 +19,10 @@ struct AddCourseView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack {
                 List {
-                    Section {
-                        TextField("제목", text: viewStore.$title)
-                            .focused($isFocused)
-                            .keyboardType(.default)
-                            .autocorrectionDisabled()
-                        TextField("위치", text: viewStore.$location)
-                            .focused($isFocused)
-                            .keyboardType(.default)
-                            .autocorrectionDisabled()
-                    }
+                    TitleLocationSectionView(store: self.store, isFocused: $isFocused)
                     
-                    Section {
-                        DatePicker(
-                            selection: viewStore.binding(
-                                get: \.startDate,
-                                send: CourseFeature.Action.setStartDate
-                            ),
-                            in: Date()...,
-                            displayedComponents: .date
-                        ) {
-                            Text("시작")
-                        }
-                        
-                        DatePicker(
-                            selection: viewStore.binding(
-                                get: \.endDate,
-                                send: CourseFeature.Action.setEndDate
-                            ),
-                            in: viewStore.startDate...,
-                            displayedComponents: .date
-                        ) {
-                            Text("종료")
-                        }
-                    }
-                    
+                    DateSectionView(store: self.store)
+                                        
                     Section {
                         TextEditor(text: viewStore.$memo)
                             .foregroundColor(viewStore.memo == memoPlaceholder ? .gray : .primary)
