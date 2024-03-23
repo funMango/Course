@@ -14,7 +14,7 @@ struct AddCourseView: View {
     @State private var isPlusBtnDisable = true
     let store: StoreOf<CourseFeature>
     var memoPlaceholder = "메모"
-        
+    
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack {
@@ -31,32 +31,26 @@ struct AddCourseView: View {
                     }
                     
                     Section {
-                        Toggle(isOn: viewStore.$isAllDay) {
-                            Text("하루 종일")
+                        DatePicker(
+                            selection: viewStore.binding(
+                                get: \.startDate,
+                                send: CourseFeature.Action.setStartDate
+                            ),
+                            in: Date()...,
+                            displayedComponents: .date
+                        ) {
+                            Text("시작")
                         }
-                                                                            
-                        if !viewStore.isAllDay {
-                            DatePicker(
-                                selection: viewStore.binding(
-                                    get: \.startDate,
-                                    send: CourseFeature.Action.setStartDate
-                                ),
-                                in: Date()...,
-                                displayedComponents: .date
-                            ) {
-                                Text("시작")
-                            }
-                            
-                            DatePicker(
-                                selection: viewStore.binding(
-                                    get: \.endDate,
-                                    send: CourseFeature.Action.setEndDate
-                                ),
-                                in: viewStore.startDate...,
-                                displayedComponents: .date
-                            ) {
-                                Text("종료")
-                            }
+                        
+                        DatePicker(
+                            selection: viewStore.binding(
+                                get: \.endDate,
+                                send: CourseFeature.Action.setEndDate
+                            ),
+                            in: viewStore.startDate...,
+                            displayedComponents: .date
+                        ) {
+                            Text("종료")
                         }
                     }
                     
@@ -111,11 +105,11 @@ struct AddCourseView: View {
 }
 
 struct AddCourseView_Previews: PreviewProvider {
-  static var previews: some View {
-      AddCourseView(showAddCourseView: .constant(true),
-                    store: Store(
-                    initialState: CourseFeature.State(),
-                    reducer: { CourseFeature() })
-                   )
-  }
+    static var previews: some View {
+        AddCourseView(showAddCourseView: .constant(true),
+                      store: Store(
+                        initialState: CourseFeature.State(),
+                        reducer: { CourseFeature() })
+        )
+    }
 }

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 import FirebaseFirestore
 import ComposableArchitecture
 import Dependencies
@@ -27,8 +26,7 @@ class FirestoreAPIClient: FirestoreAPI {
         do {
             try await db.collection("Course").document(course.id).setData([
                 "title": course.title,
-                "location": course.location,
-                "isAllDay": course.isAllDay,
+                "location": course.location,                
                 "memo": course.memo,
                 "startDate": Timestamp(date: course.startDate),
                 "endDate": Timestamp(date: course.endDate)

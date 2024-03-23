@@ -13,7 +13,6 @@ struct CourseFeature: Reducer {
     struct State: Equatable {
         @BindingState var title = ""
         @BindingState var location = ""
-        @BindingState var isAllDay = false
         @BindingState var memo = "메모"
         @BindingState var isSavedCourse = false
         var startDate = Date.now
@@ -40,8 +39,7 @@ struct CourseFeature: Reducer {
             case .tappedAddButton:
                 let course = Course(
                     title: state.title,
-                    location: state.location,
-                    isAllDay: state.isAllDay,
+                    location: state.location,                    
                     memo: state.memo,
                     startDate: state.startDate,
                     endDate: state.endDate
