@@ -34,6 +34,7 @@ class FirestoreAPIClient: FirestoreAPI {
                 "endDate": Timestamp(date: course.endDate)
             ], merge: true)
         } catch let error {
+            print("Course 저장에 실패하였습니다.")
             throw error
         }
     }

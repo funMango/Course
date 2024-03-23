@@ -52,19 +52,23 @@ struct CourseFeature: Reducer {
                 } catch: { error, send in
                     print(error)
                 }
-            case .courseSavedSuccessfully:
+                
+            case .courseSavedSuccessfully:                
                 state.isSavedCourse.toggle()
                 return .none
             
             case let .setStartDate(date):
                 state.startDate = date
                 return .none
+                
             case let .setEndDate(date):
                 state.endDate = date
                 return .none
+                
             case .resetMemo:
                 state.memo = ""
                 return .none
+                
             case .binding:
                 return .none
             }
