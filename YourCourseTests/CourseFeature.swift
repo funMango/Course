@@ -7,7 +7,7 @@
 
 import Foundation
 import ComposableArchitecture
-
+import Dependencies
 
 struct CourseFeature: Reducer {
     struct State: Equatable {
@@ -15,6 +15,7 @@ struct CourseFeature: Reducer {
         @BindingState var location = ""
         @BindingState var isAllDay = false
         @BindingState var memo = "메모"
+        @BindingState var isSavedCourse = false
         var startDate = Date.now
         var endDate = Date.now
     }
@@ -23,10 +24,13 @@ struct CourseFeature: Reducer {
         case binding(BindingAction<State>)
         case setStartDate(Date)
         case setEndDate(Date)
-        case resetMemo
+        case resetMemo        
         case tappedAddButton
-        
+        case courseSavedSuccessfully
+       
     }
+    
+    @Dependency(\.firestoreAPIClient) var firestoreAPIClient
     
     var body: some ReducerOf<Self> {
         BindingReducer()
@@ -34,7 +38,24 @@ struct CourseFeature: Reducer {
         Reduce { state, action in
             switch action {
             case .tappedAddButton:
-                return .none            
+                let course = Course(
+                    title: state.title,
+                    location: state.location,
+                    isAllDay: state.isAllDay,
+                    memo: state.memo,
+                    startDate: state.startDate,
+                    endDate: state.endDate
+                )
+                return .run { send in
+                    try await firestoreAPIClient.saveCourse(course: course)
+                    await send(.courseSavedSuccessfully)
+                } catch: { error, send in
+                    print(error)
+                }
+            case .courseSavedSuccessfully:
+                state.isSavedCourse.toggle()
+                return .none
+            
             case let .setStartDate(date):
                 state.startDate = date
                 return .none

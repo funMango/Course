@@ -10,6 +10,7 @@ import ComposableArchitecture
 
 struct AddCourseView: View {
     @Binding var showAddCourseView: Bool
+    @FocusState private var isFocused: Bool
     let store: StoreOf<CourseFeature>
     var memoPlaceholder = "메모"
         
@@ -19,7 +20,13 @@ struct AddCourseView: View {
                 List {
                     Section {
                         TextField("제목", text: viewStore.$title)
+                            .focused($isFocused)
+                            .keyboardType(.default)
+                            .autocorrectionDisabled()
                         TextField("위치", text: viewStore.$location)
+                            .focused($isFocused)
+                            .keyboardType(.default)
+                            .autocorrectionDisabled()
                     }
                     
                     Section {
@@ -57,6 +64,8 @@ struct AddCourseView: View {
                             .foregroundColor(viewStore.memo == memoPlaceholder ? .gray : .primary)
                             .cornerRadius(15)
                             .frame(minHeight: 200, maxHeight: 300)
+                            .focused($isFocused)
+                            .autocorrectionDisabled()
                             .onTapGesture {
                                 if viewStore.memo == memoPlaceholder {
                                     viewStore.send(.resetMemo)
@@ -64,27 +73,32 @@ struct AddCourseView: View {
                             }
                     }
                 }
+                .onChange(of: viewStore.$isSavedCourse) { _ in
+                    if viewStore.isSavedCourse {
+                        showAddCourseView = false
+                    }
+                }
                 .toolbar {
-//                    ToolbarItemGroup(placement: .topBarTrailing) {
-//                        Button {
-//                            viewStore.send(.tappedAddButton)
-//                        } label: {
-//                            Text("추가")
-//                        }
-//                    }
-//                    
-//                    ToolbarItemGroup(placement: .principal) {
-//                        Text("새로운 코스")
-//                    }
-//                    
-//                    ToolbarItemGroup(placement: .topBarLeading) {
-//                        Button {
-//                            showAddCourseView.toggle()
-//                        } label: {
-//                            Text("취소")
-//                                .foregroundStyle(.red)
-//                        }
-//                    }
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        Button {
+                            viewStore.send(.tappedAddButton)
+                        } label: {
+                            Text("추가")
+                        }
+                    }
+                    
+                    ToolbarItemGroup(placement: .principal) {
+                        Text("새로운 코스")
+                    }
+                    
+                    ToolbarItemGroup(placement: .topBarLeading) {
+                        Button {
+                            showAddCourseView.toggle()
+                        } label: {
+                            Text("취소")
+                                .foregroundStyle(.red)
+                        }
+                    }
                 }
             }
         }
