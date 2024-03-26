@@ -18,7 +18,7 @@ struct MemoSectionView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             Section {
                 TextEditor(text: viewStore.$memo)
-                    .foregroundColor(viewStore.memo == memoPlaceholder ? .gray : .primary)
+                    .foregroundColor(viewStore.memo == memoPlaceholder ? Color(hex: "#D3D3D5") : .primary)
                     .cornerRadius(15)
                     .frame(minHeight: 200, maxHeight: 300)
                     .focused(isFocused)
