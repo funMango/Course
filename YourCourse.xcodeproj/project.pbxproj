@@ -36,6 +36,10 @@
 		5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102182BAEA26400932A2B /* DateSectionView.swift */; };
 		5AD1021D2BAEBCB400932A2B /* TitleLocationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */; };
 		5AD1021F2BAEBE1E00932A2B /* MemoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1021E2BAEBE1E00932A2B /* MemoSectionView.swift */; };
+		5AD102242BAEC9CD00932A2B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102232BAEC9CD00932A2B /* DateExtension.swift */; };
+		5AD102272BAEE7C300932A2B /* CalendarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102262BAEE7C300932A2B /* CalendarFeature.swift */; };
+		5AD102292BB2942800932A2B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102282BB2942800932A2B /* ColorExtension.swift */; };
+		5AD1022D2BB29D3E00932A2B /* DateSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1022C2BB29D3E00932A2B /* DateSelectorView.swift */; };
 		5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */; };
 		5AE979282B9F3FE500C65C13 /* CalendarCourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */; };
 		5AE9792C2B9F441300C65C13 /* CaledarMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */; };
@@ -62,7 +66,7 @@
 		5A087BFF2BAA656D006E2676 /* CourseDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDate.swift; sourceTree = "<group>"; };
 		5A087C012BAA67A6006E2676 /* CourseDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDateTests.swift; sourceTree = "<group>"; };
 		5A56ABCE2BAAFE2C006628FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5A56ABD02BAB0234006628FF /* CourseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseFeature.swift; path = YourCourseTests/CourseFeature.swift; sourceTree = SOURCE_ROOT; };
+		5A56ABD02BAB0234006628FF /* CourseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseFeature.swift; path = YourCourse/Presents/Course/Reducer/CourseFeature.swift; sourceTree = SOURCE_ROOT; };
 		5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseView.swift; sourceTree = "<group>"; };
 		5AB2BCB82B9C097700EC20E9 /* YourCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCourseApp.swift; sourceTree = "<group>"; };
@@ -84,6 +88,10 @@
 		5AD102182BAEA26400932A2B /* DateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionView.swift; sourceTree = "<group>"; };
 		5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLocationSectionView.swift; sourceTree = "<group>"; };
 		5AD1021E2BAEBE1E00932A2B /* MemoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoSectionView.swift; sourceTree = "<group>"; };
+		5AD102232BAEC9CD00932A2B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		5AD102262BAEE7C300932A2B /* CalendarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFeature.swift; sourceTree = "<group>"; };
+		5AD102282BB2942800932A2B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		5AD1022C2BB29D3E00932A2B /* DateSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorView.swift; sourceTree = "<group>"; };
 		5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCourseListView.swift; sourceTree = "<group>"; };
 		5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaledarMainView.swift; sourceTree = "<group>"; };
@@ -172,13 +180,6 @@
 			path = Presents;
 			sourceTree = "<group>";
 		};
-		5AB0ACC42BA50B3A001078FE /* Reducer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Reducer;
-			sourceTree = "<group>";
-		};
 		5AB0ACC52BA50B61001078FE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,7 +210,7 @@
 		5AB0ACC82BA50BCA001078FE /* Course */ = {
 			isa = PBXGroup;
 			children = (
-				5AB0ACCA2BA50BE1001078FE /* Reducer */,
+				5AD102222BAEC8EC00932A2B /* Reducer */,
 				5AB0ACC92BA50BD3001078FE /* View */,
 			);
 			path = Course;
@@ -224,14 +225,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5AB0ACCA2BA50BE1001078FE /* Reducer */ = {
-			isa = PBXGroup;
-			children = (
-				5A56ABD02BAB0234006628FF /* CourseFeature.swift */,
-			);
-			path = Reducer;
-			sourceTree = "<group>";
-		};
 		5AB0ACCB2BA50BF0001078FE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				5AD102182BAEA26400932A2B /* DateSectionView.swift */,
+				5AD1022C2BB29D3E00932A2B /* DateSelectorView.swift */,
 				5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */,
 				5AD1021E2BAEBE1E00932A2B /* MemoSectionView.swift */,
 			);
@@ -374,6 +368,8 @@
 		5AD102142BAD7F5600932A2B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				5AD102232BAEC9CD00932A2B /* DateExtension.swift */,
+				5AD102282BB2942800932A2B /* ColorExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -386,11 +382,27 @@
 			path = Useless;
 			sourceTree = "<group>";
 		};
+		5AD102222BAEC8EC00932A2B /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				5A56ABD02BAB0234006628FF /* CourseFeature.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		5AD102252BAEE7AB00932A2B /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				5AD102262BAEE7C300932A2B /* CalendarFeature.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
 		5AE979242B9F3F2400C65C13 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				5AD102252BAEE7AB00932A2B /* Reducer */,
 				5AB0ACC52BA50B61001078FE /* View */,
-				5AB0ACC42BA50B3A001078FE /* Reducer */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -544,20 +556,24 @@
 				5AB2BCED2B9EA71400EC20E9 /* CalendarCourseView.swift in Sources */,
 				5AE9792C2B9F441300C65C13 /* CaledarMainView.swift in Sources */,
 				5AE979282B9F3FE500C65C13 /* CalendarCourseListView.swift in Sources */,
+				5AD1022D2BB29D3E00932A2B /* DateSelectorView.swift in Sources */,
 				5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */,
 				5AD1021D2BAEBCB400932A2B /* TitleLocationSectionView.swift in Sources */,
 				5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */,
 				5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */,
+				5AD102272BAEE7C300932A2B /* CalendarFeature.swift in Sources */,
 				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
 				5A56ABD12BAB0234006628FF /* CourseFeature.swift in Sources */,
 				5AD102132BAD7C0000932A2B /* Course.swift in Sources */,
 				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
 				5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */,
 				5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */,
+				5AD102242BAEC9CD00932A2B /* DateExtension.swift in Sources */,
 				5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */,
 				5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */,
 				5AD1021F2BAEBE1E00932A2B /* MemoSectionView.swift in Sources */,
 				5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */,
+				5AD102292BB2942800932A2B /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
