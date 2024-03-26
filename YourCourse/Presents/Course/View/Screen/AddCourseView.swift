@@ -33,7 +33,7 @@ struct AddCourseView: View {
                     isPlusBtnDisable = viewStore.title.isEmpty ? true : false
                 }
                 .toolbar {
-                    ToolbarItemGroup(placement: .topBarTrailing) {
+                    ToolbarItem(placement: .topBarTrailing) {
                         Button {
                             viewStore.send(.tappedAddButton)
                         } label: {
@@ -42,11 +42,11 @@ struct AddCourseView: View {
                         .disabled(isPlusBtnDisable)
                     }
                     
-                    ToolbarItemGroup(placement: .principal) {
+                    ToolbarItem(placement: .principal) {
                         Text("새로운 코스")
                     }
                     
-                    ToolbarItemGroup(placement: .topBarLeading) {
+                    ToolbarItem(placement: .topBarLeading) {
                         Button {
                             showAddCourseView.toggle()
                         } label: {
@@ -56,6 +56,7 @@ struct AddCourseView: View {
                     }
                 }
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

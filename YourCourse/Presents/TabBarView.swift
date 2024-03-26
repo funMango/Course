@@ -6,22 +6,26 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct TabBarView: View {
     var body: some View {
         TabView {
-            CalendarCourseView()
-                .tabItem {
-                    Image(systemName: "calendar.circle.fill")
-                    Text("Calrendar")
-                }
-                                                
+            CalendarCourseView(store: Store(
+                initialState: CalendarFeature.State(),
+                reducer: { CalendarFeature()}
+            ))
+            .tabItem {
+                Image(systemName: "calendar.circle.fill")
+                Text("Calrendar")
+            }
+            
             ArchiveView()
                 .tabItem {
                     Image(systemName: "archivebox.circle.fill")
                     Text("Archive")
                 }
-        }        
+        }
     }
 }
 
