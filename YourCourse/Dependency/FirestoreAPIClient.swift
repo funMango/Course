@@ -12,17 +12,21 @@ import Dependencies
 
 protocol FirestoreAPI {
     func saveCourse(course: Course) async throws
-    func fetchCourses() async throws -> [Course]
+    func fetchCourses() async throws -> AsyncThrowingStream<[Course], Error>
 }
 
 enum FirestoreAPIClientKey: DependencyKey {
     static var liveValue: FirestoreAPI = FirestoreAPIClient()
 }
 
+enum FetchCoursesResult {
+    case success([Course])
+    case failure(Error)
+}
 
 class FirestoreAPIClient: FirestoreAPI {
     private let db = Firestore.firestore()
-    
+            
     func saveCourse(course: Course) async throws {
         do {
             try await db.collection("Course").document(course.id).setData([
@@ -39,24 +43,25 @@ class FirestoreAPIClient: FirestoreAPI {
         }
     }
     
-    func fetchCourses() async throws -> [Course] {
-        do {
+    func fetchCourses() async throws -> AsyncThrowingStream<[Course], Error> {
+        AsyncThrowingStream<[Course], Error> { continuation in
             let collection = db.collection("Course")
-            let snapshot = try await collection.getDocuments()
-            var courses: [Course] = []
-
-            for document in snapshot.documents {
+                                          
+            let listener = collection.addSnapshotListener { (querySnapshot, error) in
+                if let error = error {
+                    continuation.finish(throwing: error)
+                    return
+                }
+                
                 do {
-                    let course = try document.data(as: Course.self)
-                    courses.append(course)
+                    let courses = try querySnapshot?.documents.compactMap { document -> Course? in
+                        try document.data(as: Course.self)
+                    } ?? []
+                    continuation.yield(courses)
                 } catch {
-                    print("Course decoding에 실패하였습니다.: \(document.documentID), error: \(error)")
+                    continuation.finish(throwing: error)
                 }
             }
-            return courses
-        } catch let error {
-            print("Course fetch에 실패하였습니다: \(error)")
-            throw error
         }
     }
 }

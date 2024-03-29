@@ -72,8 +72,8 @@ struct CalendarCourseView: View {
                     }
                 }
                 .onAppear() {
-                    viewStore.send(.fetchCoursesRequest)
-                }
+                    viewStore.send(.onAppear)
+                }                
                 .toolbar {
                     ToolbarItem {
                         Button {

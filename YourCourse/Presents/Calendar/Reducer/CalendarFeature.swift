@@ -8,33 +8,44 @@
 import Foundation
 import ComposableArchitecture
 import Dependencies
+import Combine
 
 struct CalendarFeature: Reducer {
     struct State: Equatable {
-        var courses: [Course] = []
+        @BindingState var courses: [Course] = []
     }
     
-    enum Action {
-        case fetchCoursesRequest
-        case fetchCourseResponse([Course])
+    enum Action: BindableAction {
+        case binding(BindingAction<State>)
+        case onAppear
+        case coursesLoaded([Course])
+    }
+    
+    private enum CancelIdentifiers: CaseIterable {
+        case cancelFetch
     }
     
     @Dependency(\.firestoreAPIClient) var firestoreAPIClient
     
     var body: some ReducerOf<Self> {
+        BindingReducer()
+        
         Reduce { state, action in
             switch action {
-            case .fetchCoursesRequest:
+            case .onAppear:
                 return .run { send in
-                    let courses = try await firestoreAPIClient.fetchCourses()
-                    await send(.fetchCourseResponse(courses))
+                    for try await courses in try await firestoreAPIClient.fetchCourses() {
+                        await send(.coursesLoaded(courses))
+                    }
                 } catch: { error, send in
                     print(error)
                 }
-                
-            case let .fetchCourseResponse(courses):
+            case let .coursesLoaded(courses):
+                print(courses.count)
                 state.courses = courses
-                print("Courses: \(courses)")
+                return .none
+                
+            case .binding:
                 return .none
             }
         }
