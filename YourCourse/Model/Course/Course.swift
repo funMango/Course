@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseFirestore // Firestore를 사용하기 위해 필요
+import FirebaseFirestore
 
 struct Course: Codable, Hashable {
     var id: String
@@ -15,18 +15,20 @@ struct Course: Codable, Hashable {
     var memo: String
     var startDate: Date
     var endDate: Date
+    var color: CourseColor
     
-    init(title: String, location: String, memo: String, startDate: Date, endDate: Date) {
+    init(title: String, location: String, memo: String, startDate: Date, endDate: Date, color: CourseColor) {
         self.id = UUID().uuidString
         self.title = title
         self.location = location
         self.memo = memo
         self.startDate = startDate
         self.endDate = endDate
+        self.color = color
     }
     
     enum CodingKeys: String, CodingKey {
-        case id, title, location, memo, startDate, endDate
+        case id, title, location, memo, startDate, endDate, color
     }
     
     init(from decoder: Decoder) throws {
@@ -41,6 +43,8 @@ struct Course: Codable, Hashable {
         
         let endDateTimestamp = try container.decode(Timestamp.self, forKey: .endDate)
         endDate = endDateTimestamp.dateValue()
+        
+        color = try container.decode(CourseColor.self, forKey: .color)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -55,6 +59,8 @@ struct Course: Codable, Hashable {
         
         let endDateTimestamp = Timestamp(date: endDate)
         try container.encode(endDateTimestamp, forKey: .endDate)
+        
+        try container.encode(color, forKey: .color)
     }
 }
 

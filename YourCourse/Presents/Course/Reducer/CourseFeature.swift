@@ -15,6 +15,7 @@ struct CourseFeature: Reducer {
         @BindingState var location = ""
         @BindingState var memo = "메모"
         @BindingState var isSavedCourse = false
+        @BindingState var color: CourseColor = .red
         var startDate = Date.now
         var endDate = Date.now
     }
@@ -41,7 +42,8 @@ struct CourseFeature: Reducer {
                     location: state.location,                    
                     memo: state.memo,
                     startDate: state.startDate,
-                    endDate: state.endDate
+                    endDate: state.endDate,
+                    color: state.color
                 )
                 return .run { send in
                     try await firestoreAPIClient.saveCourse(course: course)

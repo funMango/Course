@@ -23,6 +23,8 @@ struct AddCourseView: View {
                     DateSectionView(store: self.store)
                                         
                     MemoSectionView(store: self.store, isFocused: $isFocused)
+                    
+                    ColorSectionView(store: self.store)
                 }
                 .onChange(of: viewStore.$isSavedCourse) { _ in
                     if viewStore.isSavedCourse {
