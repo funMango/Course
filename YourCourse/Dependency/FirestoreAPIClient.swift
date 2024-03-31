@@ -28,18 +28,20 @@ class FirestoreAPIClient: FirestoreAPI {
     private let db = Firestore.firestore()
             
     func saveCourse(course: Course) async throws {
-        do {
-            try await db.collection("Course").document(course.id).setData([
-                "id": course.id,
-                "title": course.title,
-                "location": course.location,
-                "memo": course.memo,
-                "startDate": Timestamp(date: course.startDate),
-                "endDate": Timestamp(date: course.endDate)
-            ], merge: true)
-        } catch let error {
-            print("Course 저장에 실패하였습니다.")
-            throw error
+        let courseRef = db.collection("Course").document(course.id)
+                
+        return try await withCheckedThrowingContinuation { continuation in
+            do {
+                try courseRef.setData(from: course) { error in
+                    if let error = error {
+                        continuation.resume(throwing: error)
+                    } else {
+                        continuation.resume(returning: ())
+                    }
+                }
+            } catch {
+                continuation.resume(throwing: error)
+            }
         }
     }
     
@@ -47,7 +49,7 @@ class FirestoreAPIClient: FirestoreAPI {
         AsyncThrowingStream<[Course], Error> { continuation in
             let collection = db.collection("Course")
                                           
-            let listener = collection.addSnapshotListener { (querySnapshot, error) in
+            _ = collection.addSnapshotListener { (querySnapshot, error) in
                 if let error = error {
                     continuation.finish(throwing: error)
                     return
