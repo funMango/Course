@@ -10,6 +10,13 @@
 		5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A087BFF2BAA656D006E2676 /* CourseDate.swift */; };
 		5A087C022BAA67A6006E2676 /* CourseDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A087C012BAA67A6006E2676 /* CourseDateTests.swift */; };
 		5A087C072BAAB4D6006E2676 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5A087C062BAAB4D6006E2676 /* ComposableArchitecture */; };
+		5A1A542A2BB900ED00BA46FB /* ColorSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54292BB900ED00BA46FB /* ColorSectionView.swift */; };
+		5A1A542C2BB903EA00BA46FB /* CourseColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A542B2BB903EA00BA46FB /* CourseColor.swift */; };
+		5A1A542E2BBAA56500BA46FB /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A542D2BBAA56500BA46FB /* CustomDatePicker.swift */; };
+		5A1A54302BBAA6AA00BA46FB /* CustomDatePickerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A542F2BBAA6AA00BA46FB /* CustomDatePickerHeader.swift */; };
+		5A1A54322BBAA7FB00BA46FB /* CustomDatePickerDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54312BBAA7FB00BA46FB /* CustomDatePickerDays.swift */; };
+		5A1A54352BBAA95300BA46FB /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54342BBAA95300BA46FB /* DateValue.swift */; };
+		5A1A54372BBAB72E00BA46FB /* CustomDatePickerDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54362BBAB72E00BA46FB /* CustomDatePickerDay.swift */; };
 		5A56ABBF2BAAFD37006628FF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABBE2BAAFD37006628FF /* FirebaseAnalytics */; };
 		5A56ABC12BAAFD41006628FF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABC02BAAFD41006628FF /* FirebaseAuth */; };
 		5A56ABC72BAAFD4D006628FF /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABC62BAAFD4D006628FF /* FirebaseFirestoreSwift */; };
@@ -65,6 +72,13 @@
 /* Begin PBXFileReference section */
 		5A087BFF2BAA656D006E2676 /* CourseDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDate.swift; sourceTree = "<group>"; };
 		5A087C012BAA67A6006E2676 /* CourseDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDateTests.swift; sourceTree = "<group>"; };
+		5A1A54292BB900ED00BA46FB /* ColorSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSectionView.swift; sourceTree = "<group>"; };
+		5A1A542B2BB903EA00BA46FB /* CourseColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseColor.swift; sourceTree = "<group>"; };
+		5A1A542D2BBAA56500BA46FB /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
+		5A1A542F2BBAA6AA00BA46FB /* CustomDatePickerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerHeader.swift; sourceTree = "<group>"; };
+		5A1A54312BBAA7FB00BA46FB /* CustomDatePickerDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerDays.swift; sourceTree = "<group>"; };
+		5A1A54342BBAA95300BA46FB /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		5A1A54362BBAB72E00BA46FB /* CustomDatePickerDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerDay.swift; sourceTree = "<group>"; };
 		5A56ABCE2BAAFE2C006628FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A56ABD02BAB0234006628FF /* CourseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseFeature.swift; path = YourCourse/Presents/Course/Reducer/CourseFeature.swift; sourceTree = SOURCE_ROOT; };
 		5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseView.swift; sourceTree = "<group>"; };
@@ -132,6 +146,7 @@
 		5A087BFD2BAA6549006E2676 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5A1A54332BBAA94800BA46FB /* Calendar */,
 				5A087BFE2BAA655B006E2676 /* Course */,
 			);
 			path = Model;
@@ -142,6 +157,7 @@
 			children = (
 				5A087BFF2BAA656D006E2676 /* CourseDate.swift */,
 				5AD102122BAD7C0000932A2B /* Course.swift */,
+				5A1A542B2BB903EA00BA46FB /* CourseColor.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -160,6 +176,14 @@
 				5A087C012BAA67A6006E2676 /* CourseDateTests.swift */,
 			);
 			path = Course;
+			sourceTree = "<group>";
+		};
+		5A1A54332BBAA94800BA46FB /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				5A1A54342BBAA95300BA46FB /* DateValue.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		5A56ABBD2BAAFD37006628FF /* Frameworks */ = {
@@ -193,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				5AB2BCEC2B9EA71400EC20E9 /* CalendarCourseView.swift */,
+				5A1A542D2BBAA56500BA46FB /* CustomDatePicker.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -203,6 +228,9 @@
 				5AE9792B2B9F441300C65C13 /* CaledarMainView.swift */,
 				5AE979252B9F3F3B00C65C13 /* CalendarHeaderView.swift */,
 				5AE979272B9F3FE500C65C13 /* CalendarCourseListView.swift */,
+				5A1A542F2BBAA6AA00BA46FB /* CustomDatePickerHeader.swift */,
+				5A1A54312BBAA7FB00BA46FB /* CustomDatePickerDays.swift */,
+				5A1A54362BBAB72E00BA46FB /* CustomDatePickerDay.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -240,6 +268,7 @@
 				5AD1022C2BB29D3E00932A2B /* DateSelectorView.swift */,
 				5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */,
 				5AD1021E2BAEBE1E00932A2B /* MemoSectionView.swift */,
+				5A1A54292BB900ED00BA46FB /* ColorSectionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -556,22 +585,29 @@
 				5AB2BCED2B9EA71400EC20E9 /* CalendarCourseView.swift in Sources */,
 				5AE9792C2B9F441300C65C13 /* CaledarMainView.swift in Sources */,
 				5AE979282B9F3FE500C65C13 /* CalendarCourseListView.swift in Sources */,
+				5A1A542C2BB903EA00BA46FB /* CourseColor.swift in Sources */,
 				5AD1022D2BB29D3E00932A2B /* DateSelectorView.swift in Sources */,
+				5A1A54372BBAB72E00BA46FB /* CustomDatePickerDay.swift in Sources */,
 				5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */,
+				5A1A54322BBAA7FB00BA46FB /* CustomDatePickerDays.swift in Sources */,
 				5AD1021D2BAEBCB400932A2B /* TitleLocationSectionView.swift in Sources */,
 				5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */,
+				5A1A542E2BBAA56500BA46FB /* CustomDatePicker.swift in Sources */,
 				5AE979262B9F3F3B00C65C13 /* CalendarHeaderView.swift in Sources */,
 				5AD102272BAEE7C300932A2B /* CalendarFeature.swift in Sources */,
+				5A1A54302BBAA6AA00BA46FB /* CustomDatePickerHeader.swift in Sources */,
 				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
 				5A56ABD12BAB0234006628FF /* CourseFeature.swift in Sources */,
 				5AD102132BAD7C0000932A2B /* Course.swift in Sources */,
 				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
 				5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */,
+				5A1A542A2BB900ED00BA46FB /* ColorSectionView.swift in Sources */,
 				5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */,
 				5AD102242BAEC9CD00932A2B /* DateExtension.swift in Sources */,
 				5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */,
 				5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */,
 				5AD1021F2BAEBE1E00932A2B /* MemoSectionView.swift in Sources */,
+				5A1A54352BBAA95300BA46FB /* DateValue.swift in Sources */,
 				5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */,
 				5AD102292BB2942800932A2B /* ColorExtension.swift in Sources */,
 			);

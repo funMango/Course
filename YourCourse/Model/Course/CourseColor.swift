@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CourseColor: String, Codable {
+enum CourseColor: String, Codable, Equatable {
     case red = "ff0000"
     case blue = "0471c2"
     case yellow = "ffd966"

@@ -7,22 +7,20 @@
 
 import Foundation
 import ComposableArchitecture
+import SwiftUICalendar
 import Dependencies
 import Combine
+import SwiftUI
 
 struct CalendarFeature: Reducer {
     struct State: Equatable {
-        @BindingState var courses: [Course] = []
+        @BindingState var courses: [Course] = []          
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case onAppear
         case coursesLoaded([Course])
-    }
-    
-    private enum CancelIdentifiers: CaseIterable {
-        case cancelFetch
     }
     
     @Dependency(\.firestoreAPIClient) var firestoreAPIClient

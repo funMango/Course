@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-struct Course: Codable, Hashable {
+struct Course: Codable, Hashable, Equatable {
     var id: String
     var title: String
     var location: String
@@ -61,6 +61,20 @@ struct Course: Codable, Hashable {
         try container.encode(endDateTimestamp, forKey: .endDate)
         
         try container.encode(color, forKey: .color)
+    }
+    
+    func getDays() -> [Date] {
+        var dateArray: [Date] = []
+        var currentDate = startDate
+        
+        while currentDate <= endDate {
+            dateArray.append(currentDate)
+            
+            guard let nextDay = Calendar.current.date(byAdding: .day, value: 1, to: currentDate) else { break }
+            currentDate = nextDay
+        }
+        
+        return dateArray
     }
 }
 
