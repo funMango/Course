@@ -36,9 +36,13 @@ struct CalendarDaysView: View {
                         )
                         .onTapGesture {
                             currentDate = value.date
-                        }
+                        }                                                
                     }
                 }
+                
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(Color(hex: "#D3D3D5"))
             }
             .onChange(of: currentMonth) { newValue in
                 currentDate = getCurrentMonth()

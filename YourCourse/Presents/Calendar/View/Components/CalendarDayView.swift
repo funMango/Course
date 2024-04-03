@@ -36,9 +36,9 @@ struct CalendarDayView: View {
                 } else {
                     Rectangle()
                         .foregroundColor(.white)
-                }
-            }            
-            .frame(height: 45, alignment: .top)
+                }                            
+            }
+            .frame(height: 35, alignment: .top)
         }
     }
 }

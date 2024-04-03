@@ -17,6 +17,7 @@
 		5A1A54322BBAA7FB00BA46FB /* CalendarDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54312BBAA7FB00BA46FB /* CalendarDaysView.swift */; };
 		5A1A54352BBAA95300BA46FB /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54342BBAA95300BA46FB /* DateValue.swift */; };
 		5A1A54372BBAB72E00BA46FB /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54362BBAB72E00BA46FB /* CalendarDayView.swift */; };
+		5A1A54392BBD3FEA00BA46FB /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54382BBD3FEA00BA46FB /* CourseListView.swift */; };
 		5A56ABBF2BAAFD37006628FF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABBE2BAAFD37006628FF /* FirebaseAnalytics */; };
 		5A56ABC12BAAFD41006628FF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABC02BAAFD41006628FF /* FirebaseAuth */; };
 		5A56ABC72BAAFD4D006628FF /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABC62BAAFD4D006628FF /* FirebaseFirestoreSwift */; };
@@ -75,6 +76,7 @@
 		5A1A54312BBAA7FB00BA46FB /* CalendarDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDaysView.swift; sourceTree = "<group>"; };
 		5A1A54342BBAA95300BA46FB /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		5A1A54362BBAB72E00BA46FB /* CalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
+		5A1A54382BBD3FEA00BA46FB /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
 		5A56ABCE2BAAFE2C006628FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A56ABD02BAB0234006628FF /* CourseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseFeature.swift; path = YourCourse/Presents/Course/Reducer/CourseFeature.swift; sourceTree = SOURCE_ROOT; };
 		5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				5A1A542F2BBAA6AA00BA46FB /* CalendarHeaderView.swift */,
 				5A1A54312BBAA7FB00BA46FB /* CalendarDaysView.swift */,
 				5A1A54362BBAB72E00BA46FB /* CalendarDayView.swift */,
+				5A1A54382BBD3FEA00BA46FB /* CourseListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 			files = (
 				5A1A542C2BB903EA00BA46FB /* CourseColor.swift in Sources */,
 				5AD1022D2BB29D3E00932A2B /* DateSelectorView.swift in Sources */,
+				5A1A54392BBD3FEA00BA46FB /* CourseListView.swift in Sources */,
 				5A1A54372BBAB72E00BA46FB /* CalendarDayView.swift in Sources */,
 				5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */,
 				5A1A54322BBAA7FB00BA46FB /* CalendarDaysView.swift in Sources */,

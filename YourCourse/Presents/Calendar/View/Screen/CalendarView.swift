@@ -13,6 +13,7 @@ struct CalendarView: View {
     @State var currentDate = Date()
     @State var currentMonth = 0
     let store: StoreOf<CalendarFeature>
+    let data: [String] = ["Course1", "Course2", "Course3", "Course4"]
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -27,9 +28,11 @@ struct CalendarView: View {
                     currentDate: $currentDate,
                     currentMonth: $currentMonth,
                     store: self.store
-                )                
+                )
                 
-                Spacer()
+                CourseListView()
+                    .padding(.top, -30)
+                                    
             }
             .onAppear() {
                 viewStore.send(.onAppear)
