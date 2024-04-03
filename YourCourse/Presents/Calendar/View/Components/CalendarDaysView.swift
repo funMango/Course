@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct CustomDatePickerDays: View {
+struct CalendarDaysView: View {
     @Binding var currentDate: Date
     @Binding var currentMonth: Int
     let days: [String] = ["일", "월", "화", "수", "목", "금", "토"]
@@ -29,7 +29,7 @@ struct CustomDatePickerDays: View {
                 let columns = Array(repeating: GridItem(.flexible()), count: 7)
                 LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(extractDate()) { value in
-                        CustomDatePickerDay(
+                        CalendarDayView(
                             currentDate: self.$currentDate,
                             value: value,
                             store: self.store
@@ -47,7 +47,7 @@ struct CustomDatePickerDays: View {
     }
 }
 
-extension CustomDatePickerDays {
+extension CalendarDaysView {
     func getCurrentMonth() -> Date {
         let calendar = Calendar.current
         
@@ -80,7 +80,7 @@ extension CustomDatePickerDays {
 }
 
 #Preview {
-    CustomDatePickerDays(
+    CalendarDaysView(
         currentDate: .constant(Date()),
         currentMonth: .constant(0),
         store: Store(

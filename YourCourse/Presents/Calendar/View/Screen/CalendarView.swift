@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct CustomDatePicker: View {
+struct CalendarView: View {
     @State var showAddCourseView = false
     @State var currentDate = Date()
     @State var currentMonth = 0
@@ -17,13 +17,13 @@ struct CustomDatePicker: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack(spacing: 35) {
-                CustomDatePickerHeader(
+                CalendarHeaderView(
                     currentDate: $currentDate,
                     showAddCourseView: $showAddCourseView
                 )
                 .padding(.horizontal)
                 
-                CustomDatePickerDays(
+                CalendarDaysView(
                     currentDate: $currentDate,
                     currentMonth: $currentMonth,
                     store: self.store
@@ -59,7 +59,7 @@ struct CustomDatePicker: View {
 }
 
 #Preview {
-    CustomDatePicker(store: Store(
+    CalendarView(store: Store(
         initialState: CalendarFeature.State(),
         reducer: { CalendarFeature()}
     ))

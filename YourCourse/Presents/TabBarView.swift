@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct TabBarView: View {
     var body: some View {
         TabView {
-            CustomDatePicker(store: Store(
+            CalendarView(store: Store(
                 initialState: CalendarFeature.State(),
                 reducer: { CalendarFeature()}
             ))

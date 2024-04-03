@@ -11,5 +11,9 @@ struct DateValue: Identifiable {
     var id = UUID().uuidString
     var day: Int
     var date: Date
+    
+    func isDay() -> Bool {
+        return day != -1
+    }
 }
 

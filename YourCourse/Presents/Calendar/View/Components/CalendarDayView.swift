@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct CustomDatePickerDay: View {
+struct CalendarDayView: View {
     @Binding var currentDate: Date
     let value: DateValue
     let today = Date()
@@ -17,10 +17,7 @@ struct CustomDatePickerDay: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack {
-                if value.day == -1 {
-                    Rectangle()
-                        .foregroundColor(.white)
-                } else {
+                if value.isDay() {
                     ZStack {
                         Circle()
                             .frame(maxWidth: .infinity)
@@ -30,13 +27,15 @@ struct CustomDatePickerDay: View {
                             .font(.system(size: 17, weight: .regular))
                             .foregroundStyle(textColor())
                             .frame(maxWidth: .infinity)
-                        
                     }
                                         
                     Circle()
                         .frame(width: 6)
                         .foregroundStyle(isContainDate(courses: viewStore.courses, target: value.date) ? .red : .white)
                     
+                } else {
+                    Rectangle()
+                        .foregroundColor(.white)
                 }
             }            
             .frame(height: 45, alignment: .top)
@@ -44,7 +43,7 @@ struct CustomDatePickerDay: View {
     }
 }
 
-extension CustomDatePickerDay {
+extension CalendarDayView {
     func textColor() -> Color {
         if currentDate == value.date {
             return .white
@@ -78,7 +77,7 @@ extension CustomDatePickerDay {
     }
 }
 
-extension CustomDatePickerDay {
+extension CalendarDayView {
     func isSameDay(date1: Date, date2: Date) -> Bool {
         return Calendar.current.isDate(date1, inSameDayAs: date2)
     }
