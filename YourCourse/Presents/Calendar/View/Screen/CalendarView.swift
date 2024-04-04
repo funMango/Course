@@ -13,26 +13,22 @@ struct CalendarView: View {
     @State var currentDate = Date()
     @State var currentMonth = 0
     let store: StoreOf<CalendarFeature>
-    let data: [String] = ["Course1", "Course2", "Course3", "Course4"]
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack(spacing: 35) {
-                CalendarHeaderView(
-                    currentDate: $currentDate,
-                    showAddCourseView: $showAddCourseView
+                CalendarHeaderView(                    
+                    showAddCourseView: $showAddCourseView,
+                    store: self.store
                 )
                 .padding(.horizontal)
                 
-                CalendarDaysView(
-                    currentDate: $currentDate,
-                    currentMonth: $currentMonth,
+                CalendarDaysView(store: self.store)
+                                                    
+                CourseListView(
                     store: self.store
                 )
-                
-                CourseListView()
-                    .padding(.top, -30)
-                                    
+                .padding(.top, -30)                                    
             }
             .onAppear() {
                 viewStore.send(.onAppear)
@@ -40,13 +36,9 @@ struct CalendarView: View {
             .gesture(DragGesture()
                 .onEnded { value in
                     if value.translation.width > 0 {
-                        withAnimation {
-                            currentMonth -= 1
-                        }
+                        viewStore.send(.swipePrevMonth)
                     } else if value.translation.width < 0 {
-                        withAnimation {
-                            currentMonth += 1
-                        }
+                        viewStore.send(.swipeNextMonth)
                     }
                 }
             )

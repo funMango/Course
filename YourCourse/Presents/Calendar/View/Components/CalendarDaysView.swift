@@ -9,8 +9,6 @@ import SwiftUI
 import ComposableArchitecture
 
 struct CalendarDaysView: View {
-    @Binding var currentDate: Date
-    @Binding var currentMonth: Int
     let days: [String] = ["일", "월", "화", "수", "목", "금", "토"]
     let store: StoreOf<CalendarFeature>
     
@@ -28,15 +26,15 @@ struct CalendarDaysView: View {
                 
                 let columns = Array(repeating: GridItem(.flexible()), count: 7)
                 LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(extractDate()) { value in
+                    ForEach(viewStore.dateValues) { value in
                         CalendarDayView(
-                            currentDate: self.$currentDate,
+                            currentDate: viewStore.$currentDate,
                             value: value,
                             store: self.store
                         )
                         .onTapGesture {
-                            currentDate = value.date
-                        }                                                
+                            viewStore.send(.setCurrentDate(value.date))
+                        }
                     }
                 }
                 
@@ -44,49 +42,18 @@ struct CalendarDaysView: View {
                     .frame(height: 1)
                     .foregroundColor(Color(hex: "#D3D3D5"))
             }
-            .onChange(of: currentMonth) { newValue in
-                currentDate = getCurrentMonth()
+            .onChange(of: viewStore.currentMonth) {
+                viewStore.send(.setCurrentMonth)
+            }
+            .onAppear() {
+                viewStore.send(.extractDate)
             }
         }
     }
 }
 
-extension CalendarDaysView {
-    func getCurrentMonth() -> Date {
-        let calendar = Calendar.current
-        
-        guard let currentMonth = calendar.date(byAdding: .month,value: self.currentMonth, to: Date()) else {
-            return Date()
-        }
-        
-        return currentMonth
-    }
-    
-    func extractDate() -> [DateValue] {
-        let calendar = Calendar.current
-        
-        let currentMonth = getCurrentMonth()
-        
-        var days =  currentMonth.getAllDates().compactMap { date -> DateValue in
-            let day = calendar.component(.day, from: date)
-            
-            return DateValue(day: day, date: date)
-        }
-        
-        let firstWeekday = calendar.component(.weekday, from: days.first?.date ?? Date())
-        
-        for _ in 0..<firstWeekday - 1 {
-            days.insert(DateValue(day: -1, date: Date()), at: 0)
-        }
-        
-        return days
-    }
-}
-
 #Preview {
-    CalendarDaysView(
-        currentDate: .constant(Date()),
-        currentMonth: .constant(0),
+    CalendarDaysView(        
         store: Store(
             initialState: CalendarFeature.State(),
             reducer: { CalendarFeature() })

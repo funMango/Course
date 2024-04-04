@@ -18,6 +18,7 @@
 		5A1A54352BBAA95300BA46FB /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54342BBAA95300BA46FB /* DateValue.swift */; };
 		5A1A54372BBAB72E00BA46FB /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54362BBAB72E00BA46FB /* CalendarDayView.swift */; };
 		5A1A54392BBD3FEA00BA46FB /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54382BBD3FEA00BA46FB /* CourseListView.swift */; };
+		5A1A543B2BBE24F000BA46FB /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A543A2BBE24F000BA46FB /* DateManager.swift */; };
 		5A56ABBF2BAAFD37006628FF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABBE2BAAFD37006628FF /* FirebaseAnalytics */; };
 		5A56ABC12BAAFD41006628FF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABC02BAAFD41006628FF /* FirebaseAuth */; };
 		5A56ABC72BAAFD4D006628FF /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABC62BAAFD4D006628FF /* FirebaseFirestoreSwift */; };
@@ -77,6 +78,7 @@
 		5A1A54342BBAA95300BA46FB /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		5A1A54362BBAB72E00BA46FB /* CalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
 		5A1A54382BBD3FEA00BA46FB /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
+		5A1A543A2BBE24F000BA46FB /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		5A56ABCE2BAAFE2C006628FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A56ABD02BAB0234006628FF /* CourseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseFeature.swift; path = YourCourse/Presents/Course/Reducer/CourseFeature.swift; sourceTree = SOURCE_ROOT; };
 		5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseView.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				5AD102102BAD7A7100932A2B /* FirestoreAPIClient.swift */,
+				5A1A543A2BBE24F000BA46FB /* DateManager.swift */,
 			);
 			path = Dependency;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */,
 				5AD1021F2BAEBE1E00932A2B /* MemoSectionView.swift in Sources */,
 				5A1A54352BBAA95300BA46FB /* DateValue.swift in Sources */,
+				5A1A543B2BBE24F000BA46FB /* DateManager.swift in Sources */,
 				5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */,
 				5AD102292BB2942800932A2B /* ColorExtension.swift in Sources */,
 			);
@@ -687,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -744,7 +748,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -769,7 +773,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -798,7 +802,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -820,7 +824,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Sample.YourCourseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -839,7 +843,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Sample.YourCourseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
