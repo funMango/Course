@@ -9,9 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct CalendarView: View {
-    @State var showAddCourseView = false
-    @State var currentDate = Date()
-    @State var currentMonth = 0
+    @State var showAddCourseView = false    
     let store: StoreOf<CalendarFeature>
     
     var body: some View {
@@ -23,13 +21,15 @@ struct CalendarView: View {
                 )
                 .padding(.horizontal)
                 
-                CalendarDaysView(store: self.store)
+                CalendarDaysView(store: self.store) 
+                    .animation(.easeInOut, value: viewStore.currentDate)
+                    
                                                     
                 CourseListView(
                     store: self.store
                 )
-                .padding(.top, -30)                                    
-            }
+                .padding(.top, -30)
+            }            
             .onAppear() {
                 viewStore.send(.onAppear)
             }
@@ -50,6 +50,7 @@ struct CalendarView: View {
                 )
             }
         }
+        
     }
 }
 
