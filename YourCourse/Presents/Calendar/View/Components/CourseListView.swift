@@ -16,18 +16,19 @@ struct CourseListView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             List {
                 Section {
-                    ForEach(data, id: \.self) { value in
+                    ForEach(getFilteredCourses(date: viewStore.currentDate, courses: viewStore.courses), id: \.self) { course in
                         HStack(alignment: .top) {
                             Spacer()
                                 .frame(width: 15)
+                            
                             VStack(alignment: .leading) {
-                                Text(value)
+                                Text("\(course.title)")
                                     .font(.title3.bold())
                                 
                                 Spacer()
                                     .frame(height: 7)
                                 
-                                Text("경기도 수원시 권선구")
+                                Text("\(course.location)")
                                     .foregroundStyle(.gray)
                             }
                         }
@@ -47,8 +48,14 @@ struct CourseListView: View {
 }
 
 extension CourseListView {
-    func getFilteredCourses() {
-        
+    func getFilteredCourses(date: Date, courses: [Course]) -> [Course] {
+        return courses.filter { course in
+            let courseDates = course.getDays()
+            
+            return courseDates.contains(where: { courseDate in
+                Calendar.current.isDate(courseDate, inSameDayAs: date)
+            })
+        }
     }
 }
 
