@@ -17,7 +17,7 @@ struct CalendarFeature: Reducer {
         @BindingState var courses: [Course] = []   
         @BindingState var currentDate = Date()
         @BindingState var currentMonth = 0
-        @BindingState var dateValues: [DateValue] = []
+        @BindingState var dateValues: [DateValue] = []        
     }
     
     enum Action: BindableAction {
@@ -54,15 +54,11 @@ struct CalendarFeature: Reducer {
                 return .none
             
             case .swipeNextMonth:
-                withAnimation {
-                    state.currentMonth += 1
-                }
+                state.currentMonth += 1
                 return .none
             
             case .swipePrevMonth:
-                withAnimation {
-                    state.currentMonth -= 1
-                }
+                state.currentMonth -= 1
                 return .none
             
             case let .setCurrentDate(date):

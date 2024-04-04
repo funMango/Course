@@ -24,13 +24,13 @@ struct CalendarDayView: View {
                             .foregroundColor(circleColor())
                         
                         Text("\(value.day)")
-                            .font(.system(size: 17, weight: .regular))
+                            .font(.system(size: 15, weight: .regular))
                             .foregroundStyle(textColor())
                             .frame(maxWidth: .infinity)
                     }
                                         
                     Circle()
-                        .frame(width: 6)
+                        .frame(width: 5)
                         .foregroundStyle(isContainDate(courses: viewStore.courses, target: value.date) ? .red : .white)
                     
                 } else {

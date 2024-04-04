@@ -26,12 +26,12 @@ struct AddCourseView: View {
                     
                     ColorSectionView(store: self.store)
                 }
-                .onChange(of: viewStore.$isSavedCourse) { _ in
+                .onChange(of: viewStore.$isSavedCourse) {
                     if viewStore.isSavedCourse {
                         showAddCourseView = false
                     }
                 }
-                .onChange(of: viewStore.$title) { _ in
+                .onChange(of: viewStore.$title) {
                     isPlusBtnDisable = viewStore.title.isEmpty ? true : false
                 }
                 .toolbar {
