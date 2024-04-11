@@ -49,7 +49,7 @@ struct CalendarFeature: Reducer {
                 }
                 
             case let .coursesLoaded(courses):
-                print(courses.count)
+                print("Course들이 성공적으로 Fetch되었습니다.\nCourse \(courses.count)개")
                 state.courses = courses
                 return .none
             

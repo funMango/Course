@@ -14,43 +14,43 @@ struct CalendarView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            VStack(spacing: 35) {
-                CalendarHeaderView(                    
-                    showAddCourseView: $showAddCourseView,
-                    store: self.store
-                )
-                .padding(.horizontal)
-                
-                CalendarDaysView(store: self.store) 
-                    .animation(.easeInOut, value: viewStore.currentDate)
+            NavigationStack {
+                VStack(spacing: 35) {
+                    CalendarHeaderView(
+                        showAddCourseView: $showAddCourseView,
+                        store: self.store
+                    )
+                    .padding(.horizontal)
                     
-                                                    
-                CourseListView(
-                    store: self.store
-                )
-                .padding(.top, -30)
-            }            
-            .onAppear() {
-                viewStore.send(.onAppear)
-            }
-            .gesture(DragGesture()
-                .onEnded { value in
-                    if value.translation.width > 0 {
-                        viewStore.send(.swipePrevMonth)
-                    } else if value.translation.width < 0 {
-                        viewStore.send(.swipeNextMonth)
-                    }
+                    CalendarDaysView(store: self.store)
+                        .animation(.easeInOut, value: viewStore.currentDate)
+                                                                                
+                    CourseListView(
+                        store: self.store
+                    )
+                    .padding(.top, -30)
                 }
-            )
-            .sheet(isPresented: $showAddCourseView) {
-                AddCourseView(showAddCourseView: $showAddCourseView,
-                              store: Store(
-                                initialState: CourseFeature.State(),
-                                reducer: { CourseFeature() })
+                .onAppear() {
+                    viewStore.send(.onAppear)
+                }
+                .gesture(DragGesture()
+                    .onEnded { value in
+                        if value.translation.width > 0 {
+                            viewStore.send(.swipePrevMonth)
+                        } else if value.translation.width < 0 {
+                            viewStore.send(.swipeNextMonth)
+                        }
+                    }
                 )
+                .sheet(isPresented: $showAddCourseView) {
+                    AddCourseView(showAddCourseView: $showAddCourseView,
+                                  store: Store(
+                                    initialState: CourseFeature.State(),
+                                    reducer: { CourseFeature() })
+                    )
+                }
             }
-        }
-        
+        }        
     }
 }
 

@@ -10,38 +10,30 @@ import ComposableArchitecture
 
 struct CourseListView: View {
     let store: StoreOf<CalendarFeature>
-    let data: [String] = ["Course1", "Course2", "Course3", "Course4"]
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             List {
                 Section {
                     ForEach(getFilteredCourses(date: viewStore.currentDate, courses: viewStore.courses), id: \.self) { course in
-                        HStack(alignment: .top) {
-                            Spacer()
-                                .frame(width: 15)
-                            
-                            VStack(alignment: .leading) {
-                                Text("\(course.title)")
-                                    .font(.title3.bold())
-                                
-                                Spacer()
-                                    .frame(height: 7)
-                                
-                                Text("\(course.location)")
-                                    .foregroundStyle(.gray)
-                            }
+                        NavigationLink {
+                            CourseDetailView(store: Store(
+                                initialState: CourseDetailFeature.State(course: course),
+                                reducer: { CourseDetailFeature() }
+                            ))
+                        } label: {
+                            CourseCellView(course: course)
                         }
                         .background(
                             Rectangle()
                                 .frame(width: 6)
-                                .foregroundColor(.red)
+                                .foregroundColor(Color(hex: course.color.rawValue))
                                 .cornerRadius(3.5),
                             alignment: .leading
                         )
                     }
                 }
-            }
+            }            
             .listStyle(.inset)
         }
     }
@@ -60,9 +52,9 @@ extension CourseListView {
 }
 
 #Preview {
-    CourseListView(        
+    CourseListView(
         store: Store(
-        initialState: CalendarFeature.State(),
-        reducer: { CalendarFeature()}
-    ))
+            initialState: CalendarFeature.State(),
+            reducer: { CalendarFeature()}
+        ))
 }
