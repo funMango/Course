@@ -40,6 +40,7 @@
 		5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCF12B9EAD8C00EC20E9 /* LargeTitleText.swift */; };
 		5AB2BCF52B9EB60E00EC20E9 /* SwiftUICalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */; };
 		5AC8C0252BC7CF4300DB48FF /* ChangeCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8C0242BC7CF4300DB48FF /* ChangeCourseView.swift */; };
+		5AC8C02A2BC7DA5600DB48FF /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8C0292BC7DA5600DB48FF /* EventListView.swift */; };
 		5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102102BAD7A7100932A2B /* FirestoreAPIClient.swift */; };
 		5AD102132BAD7C0000932A2B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102122BAD7C0000932A2B /* Course.swift */; };
 		5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102182BAEA26400932A2B /* DateSectionView.swift */; };
@@ -106,6 +107,7 @@
 		5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
 		5AB2BCF12B9EAD8C00EC20E9 /* LargeTitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitleText.swift; sourceTree = "<group>"; };
 		5AC8C0242BC7CF4300DB48FF /* ChangeCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCourseView.swift; sourceTree = "<group>"; };
+		5AC8C0292BC7DA5600DB48FF /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		5AD102102BAD7A7100932A2B /* FirestoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAPIClient.swift; sourceTree = "<group>"; };
 		5AD102122BAD7C0000932A2B /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		5AD102182BAEA26400932A2B /* DateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionView.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				5AF2F7512BBF788600D7DD24 /* CourseDetailView.swift */,
+				5AC8C0292BC7DA5600DB48FF /* EventListView.swift */,
 			);
 			path = CourseDetailView;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				5A1A54302BBAA6AA00BA46FB /* CalendarHeaderView.swift in Sources */,
 				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
 				5AF2F7652BC1557A00D7DD24 /* CourseDetailFeature.swift in Sources */,
+				5AC8C02A2BC7DA5600DB48FF /* EventListView.swift in Sources */,
 				5A56ABD12BAB0234006628FF /* CourseFeature.swift in Sources */,
 				5AD102132BAD7C0000932A2B /* Course.swift in Sources */,
 				5AC8C0252BC7CF4300DB48FF /* ChangeCourseView.swift in Sources */,

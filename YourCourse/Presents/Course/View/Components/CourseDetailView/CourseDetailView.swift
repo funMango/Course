@@ -10,7 +10,8 @@ import ComposableArchitecture
 
 struct CourseDetailView: View {
     @Environment(\.dismiss) var dismiss
-    @State var showAddEventView: Bool = false
+    @State var showAddEventView = false
+    @State var showEventListView = false
     @State var draggedEvent: Event?
     let store: StoreOf<CourseDetailFeature>
         
@@ -28,41 +29,11 @@ struct CourseDetailView: View {
                         }
                     }
                     
-                    
-                    Section (header: Text("이벤트")) {
-                        ForEach(viewStore.events, id: \.self) { event in
-                            VStack(alignment: .leading) {
-                                Text(event.title)
-                                
-                                if !event.location.isEmpty {
-                                    Spacer()
-                                        .frame(height: 5)
-                                    
-                                    Text(event.location)
-                                        .foregroundStyle(.gray)
-                                        .font(.system(size: 13))
-                                }
-                            }
-                        }
-                        .onMove { from, to in
-                            viewStore.send(.eventsMove(from, to))
-                        }
-                        
-                        Button {
-                            showAddEventView.toggle()
-                        } label: {
-                            HStack(alignment: .center) {
-                                Spacer()
-                                
-                                Text("이벤트 추가")
-                                    .foregroundStyle(.red)
-                                
-                                Spacer()
-                            }
-                        }
-                    }
-                    
-                    
+                    EventListView(
+                        showAddEventView: $showAddEventView,
+                        store: self.store
+                    )
+                                                            
                     if !viewStore.course.memo.isEmpty {
                         Section(header: Text("메모")) {
                             Text(viewStore.course.memo)
