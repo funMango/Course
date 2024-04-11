@@ -11,9 +11,6 @@ import ComposableArchitecture
 struct AddEventView: View {
     @Binding var showAddEventView: Bool
     @FocusState var isFocused: Bool
-    @State private var title: String = ""
-    @State private var location: String = ""
-    @State private var memo: String = "메모"
     @State private var isPlusBtnDisable = true
     
     let store: StoreOf<EventFeature>
@@ -21,13 +18,7 @@ struct AddEventView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack {
-                List {
-                    Button {
-                        viewStore.send(.setIsSaveEvent)
-                    } label: {
-                        Text("Toggle isSavedEvent")
-                    }
-                    
+                List {                                        
                     Section {
                         InputTextFeild(
                             text: viewStore.$title,
@@ -52,14 +43,6 @@ struct AddEventView: View {
                         )
                     }
                 }
-                .onChange(of: viewStore.isSavedEvent) {
-                    print("isSavedEvent의 변화가 감지되었습니다. :\(viewStore.isSavedEvent)")
-//                    if viewStore.isSavedEvent {
-//                        showAddEventView = false
-//                        print("showAddEventView: \(showAddEventView)")
-//                        viewStore.send(.setIsSaveEvent)
-//                    }
-                }
                 .onChange(of: viewStore.title) {
                     isPlusBtnDisable = viewStore.title.isEmpty ? true : false
                 }
@@ -67,6 +50,7 @@ struct AddEventView: View {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
                             viewStore.send(.tappedSaveButton)
+                            showAddEventView.toggle()
                         } label: {
                             Text("추가")
                                 .foregroundStyle(isPlusBtnDisable ? .gray : .red)
