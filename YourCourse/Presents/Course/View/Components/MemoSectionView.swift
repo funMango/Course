@@ -17,17 +17,23 @@ struct MemoSectionView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             Section {
-                TextEditor(text: viewStore.$memo)
-                    .foregroundColor(viewStore.memo == memoPlaceholder ? Color(hex: "#D3D3D5") : .primary)
-                    .cornerRadius(15)
-                    .frame(minHeight: 200, maxHeight: 300)
-                    .focused(isFocused)
-                    .autocorrectionDisabled()
-                    .onTapGesture {
-                        if viewStore.memo == memoPlaceholder {
-                            viewStore.send(.resetMemo)
-                        }
-                    }
+                MemoTextEditor(
+                    content: viewStore.$memo,
+                    placeholder: "메모",
+                    isFocused: isFocused
+                )
+                
+//                TextEditor(text: viewStore.$memo)
+//                    .foregroundColor(viewStore.memo == memoPlaceholder ? Color(hex: "#D3D3D5") : .primary)
+//                    .cornerRadius(15)
+//                    .frame(minHeight: 200, maxHeight: 300)
+//                    .focused(isFocused)
+//                    .autocorrectionDisabled()
+//                    .onTapGesture {
+//                        if viewStore.memo == memoPlaceholder {
+//                            viewStore.send(.resetMemo)
+//                        }
+//                    }
             }
         }
     }

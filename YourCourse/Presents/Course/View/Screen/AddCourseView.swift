@@ -41,6 +41,7 @@ struct AddCourseView: View {
                             showAddCourseView.toggle()
                         } label: {
                             Text("추가")
+                                .foregroundStyle(isPlusBtnDisable ? .gray : .red)
                         }
                         .disabled(isPlusBtnDisable)
                     }
