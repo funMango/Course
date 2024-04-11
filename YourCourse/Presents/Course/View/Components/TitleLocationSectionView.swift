@@ -15,15 +15,19 @@ struct TitleLocationSectionView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             Section {
-                TextField("제목",text: viewStore.$title)
-                    .keyboardType(.default)
-                    .autocorrectionDisabled()
-                    .focused(isFocused)
+                InputTextFeild(
+                    text: viewStore.$title,
+                    title: "제목",
+                    keyboardType: .default,
+                    isFocused: isFocused
+                )
                 
-                TextField("위치",text: viewStore.$location)
-                    .keyboardType(.default)
-                    .autocorrectionDisabled()
-                    .focused(isFocused)
+                InputTextFeild(
+                    text: viewStore.$location,
+                    title: "위치",
+                    keyboardType: .default,
+                    isFocused: isFocused
+                )                                                
             }                                                        
         }
     }

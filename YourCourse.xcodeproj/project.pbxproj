@@ -48,6 +48,14 @@
 		5AD102272BAEE7C300932A2B /* CalendarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102262BAEE7C300932A2B /* CalendarFeature.swift */; };
 		5AD102292BB2942800932A2B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102282BB2942800932A2B /* ColorExtension.swift */; };
 		5AD1022D2BB29D3E00932A2B /* DateSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1022C2BB29D3E00932A2B /* DateSelectorView.swift */; };
+		5AF2F7522BBF788600D7DD24 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F7512BBF788600D7DD24 /* CourseDetailView.swift */; };
+		5AF2F7572BBF9FCD00D7DD24 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F7562BBF9FCD00D7DD24 /* AddEventView.swift */; };
+		5AF2F7592BBFA0A100D7DD24 /* InputTextFeild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F7582BBFA0A100D7DD24 /* InputTextFeild.swift */; };
+		5AF2F75B2BBFA22500D7DD24 /* MemoTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F75A2BBFA22500D7DD24 /* MemoTextEditor.swift */; };
+		5AF2F75E2BBFC3CA00D7DD24 /* EventFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F75D2BBFC3CA00D7DD24 /* EventFeature.swift */; };
+		5AF2F7612BBFD20700D7DD24 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F7602BBFD20700D7DD24 /* Event.swift */; };
+		5AF2F7632BC12FE700D7DD24 /* CourseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F7622BC12FE700D7DD24 /* CourseCellView.swift */; };
+		5AF2F7652BC1557A00D7DD24 /* CourseDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F7642BC1557A00D7DD24 /* CourseDetailFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +113,14 @@
 		5AD102262BAEE7C300932A2B /* CalendarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFeature.swift; sourceTree = "<group>"; };
 		5AD102282BB2942800932A2B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5AD1022C2BB29D3E00932A2B /* DateSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorView.swift; sourceTree = "<group>"; };
+		5AF2F7512BBF788600D7DD24 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
+		5AF2F7562BBF9FCD00D7DD24 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		5AF2F7582BBFA0A100D7DD24 /* InputTextFeild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFeild.swift; sourceTree = "<group>"; };
+		5AF2F75A2BBFA22500D7DD24 /* MemoTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTextEditor.swift; sourceTree = "<group>"; };
+		5AF2F75D2BBFC3CA00D7DD24 /* EventFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFeature.swift; sourceTree = "<group>"; };
+		5AF2F7602BBFD20700D7DD24 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		5AF2F7622BC12FE700D7DD24 /* CourseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCellView.swift; sourceTree = "<group>"; };
+		5AF2F7642BC1557A00D7DD24 /* CourseDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +160,7 @@
 			children = (
 				5A1A54332BBAA94800BA46FB /* Calendar */,
 				5A087BFE2BAA655B006E2676 /* Course */,
+				5AF2F75F2BBFD1E700D7DD24 /* Event */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +209,7 @@
 		5AB0ACC32BA50B1C001078FE /* Presents */ = {
 			isa = PBXGroup;
 			children = (
+				5AF2F7532BBF80CA00D7DD24 /* Event */,
 				5AB0ACCD2BA50C21001078FE /* Archive */,
 				5AB0ACC82BA50BCA001078FE /* Course */,
 				5AE979242B9F3F2400C65C13 /* Calendar */,
@@ -224,6 +242,7 @@
 				5A1A54312BBAA7FB00BA46FB /* CalendarDaysView.swift */,
 				5A1A54362BBAB72E00BA46FB /* CalendarDayView.swift */,
 				5A1A54382BBD3FEA00BA46FB /* CourseListView.swift */,
+				5AF2F7622BC12FE700D7DD24 /* CourseCellView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -330,11 +349,11 @@
 		5AB2BCBA2B9C097700EC20E9 /* YourCourse */ = {
 			isa = PBXGroup;
 			children = (
-				5AD102142BAD7F5600932A2B /* Helper */,
 				5AB0ACC32BA50B1C001078FE /* Presents */,
 				5A087BFD2BAA6549006E2676 /* Model */,
 				5AD1020F2BAD7A2B00932A2B /* Dependency */,
 				5AB2BCF02B9EAD7200EC20E9 /* UIElement */,
+				5AD102142BAD7F5600932A2B /* Helper */,
 				5AB2BCC12B9C097800EC20E9 /* Preview Content */,
 				5AD102172BAEA23E00932A2B /* Useless */,
 				5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */,
@@ -375,6 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				5AB2BCF12B9EAD8C00EC20E9 /* LargeTitleText.swift */,
+				5AF2F7582BBFA0A100D7DD24 /* InputTextFeild.swift */,
+				5AF2F75A2BBFA22500D7DD24 /* MemoTextEditor.swift */,
 			);
 			path = UIElement;
 			sourceTree = "<group>";
@@ -428,6 +449,49 @@
 				5AB0ACC52BA50B61001078FE /* View */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		5AF2F7532BBF80CA00D7DD24 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				5AF2F75C2BBFC3B300D7DD24 /* Reducer */,
+				5AF2F7542BBF80DF00D7DD24 /* Screen */,
+				5AF2F7552BBF9FB800D7DD24 /* Components */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		5AF2F7542BBF80DF00D7DD24 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5AF2F7512BBF788600D7DD24 /* CourseDetailView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		5AF2F7552BBF9FB800D7DD24 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5AF2F7562BBF9FCD00D7DD24 /* AddEventView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5AF2F75C2BBFC3B300D7DD24 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				5AF2F7642BC1557A00D7DD24 /* CourseDetailFeature.swift */,
+				5AF2F75D2BBFC3CA00D7DD24 /* EventFeature.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		5AF2F75F2BBFD1E700D7DD24 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				5AF2F7602BBFD20700D7DD24 /* Event.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -577,19 +641,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1A542C2BB903EA00BA46FB /* CourseColor.swift in Sources */,
+				5AF2F75E2BBFC3CA00D7DD24 /* EventFeature.swift in Sources */,
 				5AD1022D2BB29D3E00932A2B /* DateSelectorView.swift in Sources */,
 				5A1A54392BBD3FEA00BA46FB /* CourseListView.swift in Sources */,
 				5A1A54372BBAB72E00BA46FB /* CalendarDayView.swift in Sources */,
 				5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */,
+				5AF2F75B2BBFA22500D7DD24 /* MemoTextEditor.swift in Sources */,
 				5A1A54322BBAA7FB00BA46FB /* CalendarDaysView.swift in Sources */,
+				5AF2F7612BBFD20700D7DD24 /* Event.swift in Sources */,
 				5AD1021D2BAEBCB400932A2B /* TitleLocationSectionView.swift in Sources */,
 				5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */,
 				5A1A542E2BBAA56500BA46FB /* CalendarView.swift in Sources */,
+				5AF2F7632BC12FE700D7DD24 /* CourseCellView.swift in Sources */,
 				5AD102272BAEE7C300932A2B /* CalendarFeature.swift in Sources */,
+				5AF2F7522BBF788600D7DD24 /* CourseDetailView.swift in Sources */,
+				5AF2F7592BBFA0A100D7DD24 /* InputTextFeild.swift in Sources */,
 				5A1A54302BBAA6AA00BA46FB /* CalendarHeaderView.swift in Sources */,
 				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
+				5AF2F7652BC1557A00D7DD24 /* CourseDetailFeature.swift in Sources */,
 				5A56ABD12BAB0234006628FF /* CourseFeature.swift in Sources */,
 				5AD102132BAD7C0000932A2B /* Course.swift in Sources */,
+				5AF2F7572BBF9FCD00D7DD24 /* AddEventView.swift in Sources */,
 				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
 				5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */,
 				5A1A542A2BB900ED00BA46FB /* ColorSectionView.swift in Sources */,
