@@ -73,7 +73,7 @@ struct CourseDetailView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden(true)
                 .onAppear() {
-                    viewStore.send(.onAppear)
+                    viewStore.send(.loadCourse)                    
                 }
                 .toolbar() {
                     ToolbarItem(placement: .topBarTrailing) {
@@ -115,15 +115,8 @@ struct CourseDetailView: View {
 #Preview {
     CourseDetailView(
         store: Store(
-            initialState: CourseDetailFeature.State(course:
-                    Course(
-                        title: "도쿄여행",
-                        location: "도쿄",
-                        memo: "아시아나항공(나리타) 10:30 온보딩 \n대한항공(인천) 12:45 온보딩",
-                        startDate: Date(),
-                        endDate: Date(),
-                        color: .red
-                    )
+            initialState: CourseDetailFeature.State(
+                courseId: ""
                 ),
             reducer: { CourseDetailFeature() }
         )

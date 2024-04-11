@@ -11,15 +11,25 @@ import Dependencies
 
 struct CourseDetailFeature: Reducer {
     struct State: Equatable {
-        @BindingState var course: Course
+        var courseId: String
         @BindingState var events: [Event] = []
+        @BindingState var course = Course(
+            title: "",
+            location: "",
+            memo: "",
+            startDate: Date(),
+            endDate: Date(),
+            color: .red
+        )
     }
     
     enum Action: BindableAction {
-        case onAppear
+        case loadEvents
         case eventsLoaded([Event])
         case eventsMove(IndexSet, Int)
         case tappedBackButton
+        case loadCourse
+        case courseLoaded(Course)
         case binding(BindingAction<State>)
     }
     
@@ -30,7 +40,7 @@ struct CourseDetailFeature: Reducer {
         
         Reduce { state, action in
             switch action {
-            case .onAppear:
+            case .loadEvents:
                 let id = state.course.id
                 return .run { send in
                     for try await events in try await firestoreAPIClient.fetchEvents(courseId: id) {
@@ -53,6 +63,20 @@ struct CourseDetailFeature: Reducer {
                     return updatedEvent
                 }
                 return .none
+            
+            case .loadCourse:
+                let id = state.courseId
+                return .run { send in
+                    for try await course in try await firestoreAPIClient.fetchCourse(courseId: id) {
+                        await send(.courseLoaded(course))
+                    }
+                } catch: { error, send in
+                    print(error)
+                }
+            
+            case let .courseLoaded(course):
+                state.course = course
+                return .send(.loadEvents)
                 
             case .tappedBackButton:
                 let id = state.course.id

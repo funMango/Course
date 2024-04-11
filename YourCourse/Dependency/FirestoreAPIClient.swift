@@ -12,6 +12,7 @@ import Dependencies
 
 protocol FirestoreAPI {
     func saveCourse(course: Course) async throws
+    func fetchCourse(courseId: String) async throws -> AsyncThrowingStream<Course, Error>
     func fetchCourses() async throws -> AsyncThrowingStream<[Course], Error>
     func saveEvent(courseId: String, event: Event) async throws
     func fetchEvents(courseId: String) async throws -> AsyncThrowingStream<[Event], Error>
@@ -42,6 +43,35 @@ class FirestoreAPIClient: FirestoreAPI {
             }
         }
     }
+    
+    func fetchCourse(courseId: String) async throws -> AsyncThrowingStream<Course, Error> {
+        AsyncThrowingStream<Course, Error> { continuation in
+            let collection = db.collection("Course").document(courseId)
+            
+            _ = collection.addSnapshotListener{ (querySnapshot, error) in
+                if let error = error {
+                    continuation.finish(throwing: error)
+                    return
+                }
+                
+                do {
+                    let course = try querySnapshot?.data(as: Course.self) ??
+                    Course(
+                        title: "",
+                        location: "",
+                        memo: "",
+                        startDate: Date(),
+                        endDate: Date(),
+                        color: .red
+                    )
+                    continuation.yield(course)
+                } catch {
+                    continuation.finish(throwing: error)
+                }
+            }
+        }
+    }
+    
     
     func fetchCourses() async throws -> AsyncThrowingStream<[Course], Error> {
         AsyncThrowingStream<[Course], Error> { continuation in

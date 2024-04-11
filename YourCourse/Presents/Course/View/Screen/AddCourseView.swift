@@ -27,8 +27,9 @@ struct AddCourseView: View {
                     ColorSectionView(store: self.store)
                 }
                 .onChange(of: viewStore.$isSavedCourse) {
+                    print("isSavedCourse 변화가 감지되었습니다.")
                     if viewStore.isSavedCourse {
-                        showAddCourseView = false
+                        showAddCourseView.toggle()
                     }
                 }
                 .onChange(of: viewStore.$title) {
