@@ -38,7 +38,6 @@ struct AddCourseView: View {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
                             viewStore.send(.tappedAddButton)
-                            showAddCourseView.toggle()
                         } label: {
                             Text("추가")
                                 .foregroundStyle(isPlusBtnDisable ? .gray : .red)
