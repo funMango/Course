@@ -76,5 +76,28 @@ struct Course: Codable, Hashable, Equatable {
         
         return dateArray
     }
+    
+    func getPeriod() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy년 M월 d일 EEEE"
+        
+        if isSameDay(startDate, endDate) {
+            return dateFormatter.string(from: startDate)
+        }
+        
+        let formatedStartDate = dateFormatter.string(from: startDate)
+        let formatedEndDate = dateFormatter.string(from: endDate)
+        
+        return """
+               \(formatedStartDate)에서
+               \(formatedEndDate)까지
+               """
+    }
+    
+    func isSameDay(_ date1: Date, _ date2: Date) -> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(date1, inSameDayAs: date2)
+    }
 }
 
