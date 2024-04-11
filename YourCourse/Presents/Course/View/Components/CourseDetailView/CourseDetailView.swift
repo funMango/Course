@@ -32,8 +32,7 @@ struct CourseDetailView: View {
                     EventListView(
                         showAddEventView: $showAddEventView,
                         store: self.store
-                    )
-                    
+                    )                    
                                                             
                     if !viewStore.course.memo.isEmpty {
                         Section(header: Text("메모")) {
