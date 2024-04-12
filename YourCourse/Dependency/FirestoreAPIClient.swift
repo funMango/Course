@@ -53,26 +53,18 @@ class FirestoreAPIClient: FirestoreAPI {
                     continuation.finish(throwing: error)
                     return
                 }
-                
+                                
                 do {
-                    let course = try querySnapshot?.data(as: Course.self) ??
-                    Course(
-                        title: "",
-                        location: "",
-                        memo: "",
-                        startDate: Date(),
-                        endDate: Date(),
-                        color: .red
-                    )
-                    continuation.yield(course)
+                    if let course = try querySnapshot?.data(as: Course.self) {
+                        continuation.yield(course)
+                    }
                 } catch {
                     continuation.finish(throwing: error)
                 }
             }
         }
     }
-    
-    
+            
     func fetchCourses() async throws -> AsyncThrowingStream<[Course], Error> {
         AsyncThrowingStream<[Course], Error> { continuation in
             let collection = db.collection("Course")
