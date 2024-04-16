@@ -25,13 +25,7 @@ struct AddCourseView: View {
                     MemoSectionView(store: self.store, isFocused: $isFocused)
                     
                     ColorSectionView(store: self.store)
-                }
-                .onChange(of: viewStore.$isSavedCourse) {
-                    print("isSavedCourse 변화가 감지되었습니다.")
-                    if viewStore.isSavedCourse {
-                        showAddCourseView.toggle()
-                    }
-                }
+                }                
                 .onChange(of: viewStore.$title) {
                     isPlusBtnDisable = viewStore.title.isEmpty ? true : false
                 }
@@ -39,6 +33,7 @@ struct AddCourseView: View {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
                             viewStore.send(.tappedAddButton)
+                            showAddCourseView.toggle()
                         } label: {
                             Text("추가")
                                 .foregroundStyle(isPlusBtnDisable ? .gray : .red)

@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct CourseDetailView: View {
     @Environment(\.dismiss) var dismiss
     @State var showAddEventView = false
-    @State var showEventListView = false
+    @State var showChangeCourseView = false
     @State var draggedEvent: Event?
     let store: StoreOf<CourseDetailFeature>
         
@@ -49,7 +49,7 @@ struct CourseDetailView: View {
                 .toolbar() {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            
+                            showChangeCourseView.toggle()
                         } label: {
                             Text("편집")
                                 .foregroundStyle(.red)
@@ -75,6 +75,17 @@ struct CourseDetailView: View {
                                 events: viewStore.events                                
                             ),
                             reducer: { EventFeature() }
+                        )
+                    )
+                }
+                .sheet(isPresented: $showChangeCourseView) {                                        
+                    ChangeCourseView(
+                        showChangeCourseView: $showChangeCourseView,
+                        store: Store(
+                            initialState: CourseChangeFeature.State(
+                                course: viewStore.course
+                            ),
+                            reducer: { CourseChangeFeature() }
                         )
                     )
                 }
