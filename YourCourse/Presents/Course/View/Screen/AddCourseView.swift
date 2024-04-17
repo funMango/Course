@@ -12,7 +12,7 @@ struct AddCourseView: View {
     @Binding var showAddCourseView: Bool
     @FocusState private var isFocused: Bool
     @State private var isPlusBtnDisable = true
-    let store: StoreOf<CourseFeature>
+    let store: StoreOf<CourseAddFeature>
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -26,8 +26,8 @@ struct AddCourseView: View {
                     
                     ColorSectionView(store: self.store)
                 }                
-                .onChange(of: viewStore.$title) {
-                    isPlusBtnDisable = viewStore.title.isEmpty ? true : false
+                .onChange(of: viewStore.course.title) {
+                    isPlusBtnDisable = viewStore.course.title.isEmpty ? true : false
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
@@ -64,8 +64,8 @@ struct AddCourseView_Previews: PreviewProvider {
     static var previews: some View {
         AddCourseView(showAddCourseView: .constant(true),
                       store: Store(
-                        initialState: CourseFeature.State(),
-                        reducer: { CourseFeature() })
+                        initialState: CourseAddFeature.State(),
+                        reducer: { CourseAddFeature() })
         )
     }
 }

@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 
 struct MemoSectionView: View {
-    let store: StoreOf<CourseFeature>
+    let store: StoreOf<CourseAddFeature>
     let isFocused: FocusState<Bool>.Binding
     var memoPlaceholder = "메모"
     
@@ -18,22 +18,10 @@ struct MemoSectionView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             Section {
                 MemoTextEditor(
-                    content: viewStore.$memo,
+                    content: viewStore.$course.memo,
                     placeholder: "메모",
                     isFocused: isFocused
                 )
-                
-//                TextEditor(text: viewStore.$memo)
-//                    .foregroundColor(viewStore.memo == memoPlaceholder ? Color(hex: "#D3D3D5") : .primary)
-//                    .cornerRadius(15)
-//                    .frame(minHeight: 200, maxHeight: 300)
-//                    .focused(isFocused)
-//                    .autocorrectionDisabled()
-//                    .onTapGesture {
-//                        if viewStore.memo == memoPlaceholder {
-//                            viewStore.send(.resetMemo)
-//                        }
-//                    }
             }
         }
     }

@@ -45,8 +45,8 @@ struct CalendarView: View {
                 .sheet(isPresented: $showAddCourseView) {
                     AddCourseView(showAddCourseView: $showAddCourseView,
                                   store: Store(
-                                    initialState: CourseFeature.State(),
-                                    reducer: { CourseFeature() })
+                                    initialState: CourseAddFeature.State(),
+                                    reducer: { CourseAddFeature() })
                     )
                 }
             }

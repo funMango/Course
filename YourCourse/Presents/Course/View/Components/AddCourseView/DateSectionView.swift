@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct DateSectionView: View {
     @State var showStartDateCalendar = false
     @State var showEndDateCalendar = false
-    let store: StoreOf<CourseFeature>
+    let store: StoreOf<CourseAddFeature>
     
     private var animation: Animation {
         .easeInOut(duration: 0.1)
@@ -39,7 +39,7 @@ struct DateSectionView: View {
 
 #Preview {
     DateSectionView(store: Store(
-        initialState: CourseFeature.State(),
-        reducer: { CourseFeature() }
+        initialState: CourseAddFeature.State(),
+        reducer: { CourseAddFeature() }
     ))
 }

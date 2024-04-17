@@ -16,7 +16,7 @@ enum SelectDateType {
 struct DateSelectorView: View {
     @Binding var showCalendar: Bool
     let type: SelectDateType
-    let store: StoreOf<CourseFeature>
+    let store: StoreOf<CourseAddFeature>
     
     private var animation: Animation {
         .easeInOut(duration: 0.1)
@@ -35,30 +35,22 @@ struct DateSelectorView: View {
                         showCalendar.toggle()
                     }
                 } label: {
-                    Text(type == .start ?
-                         "\(viewStore.startDate.formatDateToString())" :
-                            "\(viewStore.endDate.formatDateToString())"
+                    DayPickerBtnText(
+                        showCalendar: $showCalendar,
+                        title: type == .start ?
+                        "\(viewStore.course.startDate.formatDateToString())" :
+                        "\(viewStore.course.endDate.formatDateToString())"
                     )
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 5)
-                    .foregroundColor(showCalendar ? .red : .black)
-                    .background(Color(hex: "#eeeeee"))
-                    .cornerRadius(8)
                 }
             }
             
             if showCalendar {                
                 DatePicker(
                     type == .start ? "시작" : "종료",
-                    selection: viewStore.binding(
-                        get: type == .start ? \.startDate : \.endDate,
-                        send: type == .start ?
-                        CourseFeature.Action.setStartDate :
-                            CourseFeature.Action.setEndDate
-                    ),
+                    selection: type == .start ? viewStore.$course.startDate : viewStore.$course.endDate,
                     in: type == .start ?
                         Date.distantPast...Date.distantFuture :
-                        viewStore.startDate...Date.distantFuture,
+                        viewStore.course.startDate...Date.distantFuture,
                     displayedComponents: .date
                 )
                 .datePickerStyle(.graphical)
@@ -72,7 +64,7 @@ struct DateSelectorView: View {
     DateSelectorView(showCalendar: .constant(false),
                      type: .start,
                      store: Store(
-                        initialState: CourseFeature.State(),
-                        reducer: { CourseFeature() }
+                        initialState: CourseAddFeature.State(),
+                        reducer: { CourseAddFeature() }
                      ))
 }

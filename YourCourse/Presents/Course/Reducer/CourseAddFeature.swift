@@ -1,22 +1,23 @@
 //
-//  CourseChangeFeature.swift
+//  CourseFeature.swift
 //  YourCourse
 //
-//  Created by 이민호 on 4/12/24.
+//  Created by 이민호 on 3/20/24.
 //
 
 import Foundation
 import ComposableArchitecture
 import Dependencies
 
-struct CourseChangeFeature: Reducer {
-    struct State: Equatable {        
-        @BindingState var course: Course
+struct CourseAddFeature: Reducer {
+    struct State: Equatable {
+        @BindingState var course = Course()
     }
     
     enum Action: BindableAction {
-        case tappedSaveBtn        
         case binding(BindingAction<State>)
+        case tappedAddButton
+        case saveCourse
     }
     
     @Dependency(\.firestoreAPIClient) var firestoreAPIClient
@@ -26,7 +27,13 @@ struct CourseChangeFeature: Reducer {
         
         Reduce { state, action in
             switch action {
-            case .tappedSaveBtn:
+            case .tappedAddButton:
+                if state.course.memo == "메모" {
+                    state.course.memo = ""
+                }
+                return .send(.saveCourse)
+            
+            case .saveCourse:
                 let course = state.course
                 return .run { send in
                     try await firestoreAPIClient.saveCourse(course: course)

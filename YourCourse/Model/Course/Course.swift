@@ -17,7 +17,7 @@ struct Course: Codable, Hashable, Equatable {
     var endDate: Date
     var color: CourseColor
     
-    init(title: String, location: String, memo: String, startDate: Date, endDate: Date, color: CourseColor) {
+    init(title: String = "", location: String = "", memo: String = "메모", startDate: Date = Date(), endDate: Date = Date(), color: CourseColor = .red) {
         self.id = UUID().uuidString
         self.title = title
         self.location = location
