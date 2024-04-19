@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 
 struct MemoSectionView: View {
-    let store: StoreOf<CourseAddFeature>
+    let store: StoreOf<CourseFeature>
     let isFocused: FocusState<Bool>.Binding
     var memoPlaceholder = "메모"
     

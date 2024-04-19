@@ -8,11 +8,13 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct ChangeCourseView: View {
+struct CourseChangeView: View {
     @Binding var showChangeCourseView: Bool
     @State var isSaveBtnDisable = false
+    @State var showStartDateCalendar = false
+    @State var showEndDateCalendar = false
     @FocusState var isFocused: Bool
-    let store: StoreOf<CourseChangeFeature>
+    let store: StoreOf<CourseFeature>
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -35,12 +37,28 @@ struct ChangeCourseView: View {
                     }
                     
                     Section {
+                        DateSelectorView(
+                            showCalendar: $showStartDateCalendar,
+                            type: .start,
+                            store: self.store
+                        )
+                        
+                        DateSelectorView(
+                            showCalendar: $showEndDateCalendar,
+                            type: .end,
+                            store: self.store
+                        )
+                    }
+                                                            
+                    Section {
                         MemoTextEditor(
                             content: viewStore.$course.memo,
                             placeholder: "메모",
                             isFocused: $isFocused
                         )
-                    }                   
+                    }
+                    
+                    ColorSectionView(store: self.store)
                 }
                 .onChange(of: viewStore.course.title) {
                     isSaveBtnDisable = viewStore.course.title.isEmpty ? true : false                    
@@ -48,7 +66,7 @@ struct ChangeCourseView: View {
                 .toolbar() {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            viewStore.send(.tappedSaveBtn)
+                            viewStore.send(.tappedSaveButton)
                             showChangeCourseView.toggle()
                         } label: {
                             Text("저장")
@@ -75,10 +93,10 @@ struct ChangeCourseView: View {
 }
 
 #Preview {
-    ChangeCourseView(
+    CourseChangeView(
         showChangeCourseView: .constant(false),
         store: Store(
-            initialState: CourseChangeFeature.State(course:
+            initialState: CourseFeature.State(course:
                     Course(
                         title: "도쿄여행",
                         location: "도쿄",
@@ -88,7 +106,7 @@ struct ChangeCourseView: View {
                         color: .red
                     )
                 ),
-            reducer: { CourseChangeFeature() }
+            reducer: { CourseFeature() }
         )
     )
 }

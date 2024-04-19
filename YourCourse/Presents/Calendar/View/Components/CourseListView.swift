@@ -18,8 +18,8 @@ struct CourseListView: View {
                     ForEach(getFilteredCourses(date: viewStore.currentDate, courses: viewStore.courses), id: \.self) { course in
                         NavigationLink {
                             CourseDetailView(store: Store(
-                                initialState: CourseDetailFeature.State(courseId: course.id),
-                                reducer: { CourseDetailFeature() }
+                                initialState: CourseFeature.State(course: course),
+                                reducer: { CourseFeature() }
                             ))
                         } label: {
                             CourseCellView(course: course)

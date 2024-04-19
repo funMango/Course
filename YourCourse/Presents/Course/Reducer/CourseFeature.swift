@@ -9,15 +9,17 @@ import Foundation
 import ComposableArchitecture
 import Dependencies
 
-struct CourseAddFeature: Reducer {
+struct CourseFeature: Reducer {
     struct State: Equatable {
         @BindingState var course = Course()
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
-        case tappedAddButton
+        case tappedSaveButton
         case saveCourse
+        case fetchCourse
+        case setCourse(Course)
     }
     
     @Dependency(\.firestoreAPIClient) var firestoreAPIClient
@@ -27,7 +29,7 @@ struct CourseAddFeature: Reducer {
         
         Reduce { state, action in
             switch action {
-            case .tappedAddButton:
+            case .tappedSaveButton:
                 if state.course.memo == "메모" {
                     state.course.memo = ""
                 }
@@ -40,9 +42,21 @@ struct CourseAddFeature: Reducer {
                 } catch: { error, send in
                     print(error)
                 }
-                                                                                                
-            case .binding:
+                
+            case .fetchCourse:
+                let id = state.course.id
+                return .run { send in
+                    for try await course in try await firestoreAPIClient.fetchCourse(courseId: id) {
+                        await send(.setCourse(course))
+                    }
+                }
+                
+            case let .setCourse(course):
+                state.course = course
                 return .none
+                                                                                            
+            case .binding:
+                return .none                            
             }
         }
     }

@@ -8,11 +8,11 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct AddCourseView: View {
+struct CourseAddView: View {
     @Binding var showAddCourseView: Bool
     @FocusState private var isFocused: Bool
     @State private var isPlusBtnDisable = true
-    let store: StoreOf<CourseAddFeature>
+    let store: StoreOf<CourseFeature>
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -32,7 +32,7 @@ struct AddCourseView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            viewStore.send(.tappedAddButton)
+                            viewStore.send(.tappedSaveButton)
                             showAddCourseView.toggle()
                         } label: {
                             Text("추가")
@@ -62,10 +62,10 @@ struct AddCourseView: View {
 
 struct AddCourseView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCourseView(showAddCourseView: .constant(true),
+        CourseAddView(showAddCourseView: .constant(true),
                       store: Store(
-                        initialState: CourseAddFeature.State(),
-                        reducer: { CourseAddFeature() })
+                        initialState: CourseFeature.State(),
+                        reducer: { CourseFeature() })
         )
     }
 }

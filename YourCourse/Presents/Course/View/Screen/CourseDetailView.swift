@@ -12,27 +12,22 @@ struct CourseDetailView: View {
     @Environment(\.dismiss) var dismiss
     @State var showAddEventView = false
     @State var showChangeCourseView = false
-    @State var draggedEvent: Event?
-    let store: StoreOf<CourseDetailFeature>
+   //  @State var draggedEvent: Event?
+    let store: StoreOf<CourseFeature>
         
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack {
                 List {
-                    Section(header: Text("날짜")) {
-                        Text("\(viewStore.course.getPeriod())")
-                    }
-                    
-                    if !viewStore.course.location.isEmpty {
-                        Section(header: Text("장소")) {
-                            Text(viewStore.course.location)
-                        }
-                    }
-                    
+                    CourseInfoView(store: self.store)
+                                                           
                     EventListView(
-                        showAddEventView: $showAddEventView,
-                        store: self.store
-                    )                    
+                        store: Store(
+                            initialState: EventsFeature.State(),
+                            reducer: { EventsFeature() }
+                        ),
+                        courseId: viewStore.course.id
+                    )
                                                             
                     if !viewStore.course.memo.isEmpty {
                         Section(header: Text("메모")) {
@@ -40,11 +35,11 @@ struct CourseDetailView: View {
                         }
                     }
                 }                
-                .navigationTitle(viewStore.course.title)
+                .navigationTitle("코스")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden(true)
                 .onAppear() {
-                    viewStore.send(.loadCourse)                    
+                    viewStore.send(.fetchCourse)
                 }
                 .toolbar() {
                     ToolbarItem(placement: .topBarTrailing) {
@@ -58,7 +53,6 @@ struct CourseDetailView: View {
                     
                     ToolbarItemGroup(placement: .topBarLeading) {
                         Button {
-                            viewStore.send(.tappedBackButton)
                             dismiss()
                         } label: {
                             Image(systemName: "chevron.left")
@@ -66,27 +60,10 @@ struct CourseDetailView: View {
                         }
                     }
                 }
-                .sheet(isPresented: $showAddEventView) {
-                    AddEventView(
-                        showAddEventView: $showAddEventView,
-                        store: Store(
-                            initialState: EventFeature.State(
-                                course: viewStore.course,
-                                events: viewStore.events                                
-                            ),
-                            reducer: { EventFeature() }
-                        )
-                    )
-                }
                 .sheet(isPresented: $showChangeCourseView) {                                        
-                    ChangeCourseView(
+                    CourseChangeView(
                         showChangeCourseView: $showChangeCourseView,
-                        store: Store(
-                            initialState: CourseChangeFeature.State(
-                                course: viewStore.course
-                            ),
-                            reducer: { CourseChangeFeature() }
-                        )
+                        store: self.store
                     )
                 }
             }
@@ -97,10 +74,17 @@ struct CourseDetailView: View {
 #Preview {
     CourseDetailView(
         store: Store(
-            initialState: CourseDetailFeature.State(
-                courseId: ""
+            initialState: CourseFeature.State(course:
+                    Course(
+                        title: "도쿄여행",
+                        location: "도쿄역",
+                        memo: "나리타 익스프레스 -> 도쿄역",
+                        startDate: Date(),
+                        endDate: Date(),
+                        color: .navy
+                    )
                 ),
-            reducer: { CourseDetailFeature() }
+            reducer: { CourseFeature() }
         )
     )
 }

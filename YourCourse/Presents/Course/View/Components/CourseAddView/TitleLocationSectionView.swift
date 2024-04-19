@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct TitleLocationSectionView: View {
-    let store: StoreOf<CourseAddFeature>
+    let store: StoreOf<CourseFeature>
     let isFocused: FocusState<Bool>.Binding
     
     var body: some View {
