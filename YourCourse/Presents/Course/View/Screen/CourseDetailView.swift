@@ -12,7 +12,6 @@ struct CourseDetailView: View {
     @Environment(\.dismiss) var dismiss
     @State var showAddEventView = false
     @State var showChangeCourseView = false
-   //  @State var draggedEvent: Event?
     let store: StoreOf<CourseFeature>
         
     var body: some View {
@@ -20,11 +19,11 @@ struct CourseDetailView: View {
             NavigationStack {
                 List {
                     CourseInfoView(store: self.store)
-                                                           
+                                                                               
                     EventListView(
-                        store: Store(
-                            initialState: EventsFeature.State(),
-                            reducer: { EventsFeature() }
+                        store: self.store.scope(
+                            state: \.eventsFeature,
+                            action: \.eventsFeature
                         ),
                         courseId: viewStore.course.id
                     )
@@ -34,7 +33,7 @@ struct CourseDetailView: View {
                             Text(viewStore.course.memo)
                         }
                     }
-                }                
+                }
                 .navigationTitle("코스")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden(true)

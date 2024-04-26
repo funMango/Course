@@ -8,8 +8,6 @@
 import SwiftUI
 import ComposableArchitecture
 
-
-
 struct ColorSectionView: View {
     let store: StoreOf<CourseFeature>
     var colors: [CourseColor] = [.red, .blue, .yellow, .brown, .navy, .purple]

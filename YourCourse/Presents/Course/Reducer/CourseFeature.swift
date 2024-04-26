@@ -9,9 +9,11 @@ import Foundation
 import ComposableArchitecture
 import Dependencies
 
-struct CourseFeature: Reducer {
+@Reducer
+struct CourseFeature {
     struct State: Equatable {
         @BindingState var course = Course()
+        var eventsFeature = EventsFeature.State()
     }
     
     enum Action: BindableAction {
@@ -20,11 +22,16 @@ struct CourseFeature: Reducer {
         case saveCourse
         case fetchCourse
         case setCourse(Course)
+        case eventsFeature(EventsFeature.Action)        
     }
     
     @Dependency(\.firestoreAPIClient) var firestoreAPIClient
     
-    var body: some ReducerOf<Self> {
+    var body: some Reducer<State, Action> {
+        Scope(state: \.eventsFeature, action: /Action.eventsFeature) {
+            EventsFeature()
+        }
+        
         BindingReducer()
         
         Reduce { state, action in
@@ -34,7 +41,7 @@ struct CourseFeature: Reducer {
                     state.course.memo = ""
                 }
                 return .send(.saveCourse)
-            
+                
             case .saveCourse:
                 let course = state.course
                 return .run { send in
@@ -54,9 +61,12 @@ struct CourseFeature: Reducer {
             case let .setCourse(course):
                 state.course = course
                 return .none
-                                                                                            
+                                            
             case .binding:
-                return .none                            
+                return .none
+                
+            default:
+                return .none                
             }
         }
     }

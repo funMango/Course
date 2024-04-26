@@ -11,6 +11,10 @@
 		5A087C022BAA67A6006E2676 /* CourseDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A087C012BAA67A6006E2676 /* CourseDateTests.swift */; };
 		5A087C072BAAB4D6006E2676 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5A087C062BAAB4D6006E2676 /* ComposableArchitecture */; };
 		5A091C7A2BCFEB9400703F06 /* DayPickerBtnText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A091C792BCFEB9400703F06 /* DayPickerBtnText.swift */; };
+		5A091C7F2BD149F700703F06 /* DateSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A091C7E2BD149F700703F06 /* DateSelectionButton.swift */; };
+		5A091C862BD1531F00703F06 /* CourseFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A091C852BD1531F00703F06 /* CourseFeature.swift */; };
+		5A091C882BD2169A00703F06 /* EventsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A091C872BD2169A00703F06 /* EventsFeature.swift */; };
+		5A091C8A2BD25A1300703F06 /* CourseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A091C892BD25A1300703F06 /* CourseInfoView.swift */; };
 		5A1A542A2BB900ED00BA46FB /* ColorSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A54292BB900ED00BA46FB /* ColorSectionView.swift */; };
 		5A1A542C2BB903EA00BA46FB /* CourseColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A542B2BB903EA00BA46FB /* CourseColor.swift */; };
 		5A1A542E2BBAA56500BA46FB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A542D2BBAA56500BA46FB /* CalendarView.swift */; };
@@ -26,8 +30,9 @@
 		5A56ABCB2BAAFD64006628FF /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABCA2BAAFD64006628FF /* FirebaseDatabaseSwift */; };
 		5A56ABCD2BAAFD87006628FF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5A56ABCC2BAAFD87006628FF /* FirebaseStorage */; };
 		5A56ABCF2BAAFE2C006628FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A56ABCE2BAAFE2C006628FF /* GoogleService-Info.plist */; };
-		5A56ABD12BAB0234006628FF /* CourseAddFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56ABD02BAB0234006628FF /* CourseAddFeature.swift */; };
-		5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */; };
+		5A64944D2BDB5B5B00E5B0DE /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A64944C2BDB5B5B00E5B0DE /* Parent.swift */; };
+		5A64944F2BDB5B6200E5B0DE /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A64944E2BDB5B6200E5B0DE /* Child.swift */; };
+		5A9EB31B2BA5D7EE00509229 /* CourseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9EB31A2BA5D7EE00509229 /* CourseAddView.swift */; };
 		5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */; };
 		5AB2BCC02B9C097800EC20E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */; };
 		5AB2BCC32B9C097800EC20E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCC22B9C097800EC20E9 /* Preview Assets.xcassets */; };
@@ -40,9 +45,8 @@
 		5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */; };
 		5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCF12B9EAD8C00EC20E9 /* LargeTitleText.swift */; };
 		5AB2BCF52B9EB60E00EC20E9 /* SwiftUICalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB2BCF42B9EB60E00EC20E9 /* SwiftUICalendar */; };
-		5AC8C0252BC7CF4300DB48FF /* ChangeCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8C0242BC7CF4300DB48FF /* ChangeCourseView.swift */; };
+		5AC8C0252BC7CF4300DB48FF /* CourseChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8C0242BC7CF4300DB48FF /* CourseChangeView.swift */; };
 		5AC8C02A2BC7DA5600DB48FF /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8C0292BC7DA5600DB48FF /* EventListView.swift */; };
-		5AC8C02C2BC93F7300DB48FF /* CourseChangeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8C02B2BC93F7300DB48FF /* CourseChangeFeature.swift */; };
 		5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102102BAD7A7100932A2B /* FirestoreAPIClient.swift */; };
 		5AD102132BAD7C0000932A2B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102122BAD7C0000932A2B /* Course.swift */; };
 		5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD102182BAEA26400932A2B /* DateSectionView.swift */; };
@@ -59,7 +63,6 @@
 		5AF2F75E2BBFC3CA00D7DD24 /* EventFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F75D2BBFC3CA00D7DD24 /* EventFeature.swift */; };
 		5AF2F7612BBFD20700D7DD24 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F7602BBFD20700D7DD24 /* Event.swift */; };
 		5AF2F7632BC12FE700D7DD24 /* CourseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F7622BC12FE700D7DD24 /* CourseCellView.swift */; };
-		5AF2F7652BC1557A00D7DD24 /* CourseDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2F7642BC1557A00D7DD24 /* CourseDetailFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,10 @@
 		5A087BFF2BAA656D006E2676 /* CourseDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDate.swift; sourceTree = "<group>"; };
 		5A087C012BAA67A6006E2676 /* CourseDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDateTests.swift; sourceTree = "<group>"; };
 		5A091C792BCFEB9400703F06 /* DayPickerBtnText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPickerBtnText.swift; sourceTree = "<group>"; };
+		5A091C7E2BD149F700703F06 /* DateSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionButton.swift; sourceTree = "<group>"; };
+		5A091C852BD1531F00703F06 /* CourseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseFeature.swift; sourceTree = "<group>"; };
+		5A091C872BD2169A00703F06 /* EventsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsFeature.swift; sourceTree = "<group>"; };
+		5A091C892BD25A1300703F06 /* CourseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoView.swift; sourceTree = "<group>"; };
 		5A1A54292BB900ED00BA46FB /* ColorSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSectionView.swift; sourceTree = "<group>"; };
 		5A1A542B2BB903EA00BA46FB /* CourseColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseColor.swift; sourceTree = "<group>"; };
 		5A1A542D2BBAA56500BA46FB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -93,8 +100,9 @@
 		5A1A54382BBD3FEA00BA46FB /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
 		5A1A543A2BBE24F000BA46FB /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		5A56ABCE2BAAFE2C006628FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5A56ABD02BAB0234006628FF /* CourseAddFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseAddFeature.swift; path = YourCourse/Presents/Course/Reducer/CourseAddFeature.swift; sourceTree = SOURCE_ROOT; };
-		5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseView.swift; sourceTree = "<group>"; };
+		5A64944C2BDB5B5B00E5B0DE /* Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
+		5A64944E2BDB5B6200E5B0DE /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		5A9EB31A2BA5D7EE00509229 /* CourseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAddView.swift; sourceTree = "<group>"; };
 		5AB2BCB82B9C097700EC20E9 /* YourCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCourseApp.swift; sourceTree = "<group>"; };
 		5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,9 +117,8 @@
 		5AB2BCEA2B9EA67600EC20E9 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		5AB2BCEE2B9EA8AE00EC20E9 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
 		5AB2BCF12B9EAD8C00EC20E9 /* LargeTitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitleText.swift; sourceTree = "<group>"; };
-		5AC8C0242BC7CF4300DB48FF /* ChangeCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCourseView.swift; sourceTree = "<group>"; };
+		5AC8C0242BC7CF4300DB48FF /* CourseChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseChangeView.swift; sourceTree = "<group>"; };
 		5AC8C0292BC7DA5600DB48FF /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
-		5AC8C02B2BC93F7300DB48FF /* CourseChangeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseChangeFeature.swift; sourceTree = "<group>"; };
 		5AD102102BAD7A7100932A2B /* FirestoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAPIClient.swift; sourceTree = "<group>"; };
 		5AD102122BAD7C0000932A2B /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		5AD102182BAEA26400932A2B /* DateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionView.swift; sourceTree = "<group>"; };
@@ -128,7 +135,6 @@
 		5AF2F75D2BBFC3CA00D7DD24 /* EventFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFeature.swift; sourceTree = "<group>"; };
 		5AF2F7602BBFD20700D7DD24 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		5AF2F7622BC12FE700D7DD24 /* CourseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCellView.swift; sourceTree = "<group>"; };
-		5AF2F7642BC1557A00D7DD24 /* CourseDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +205,26 @@
 			path = Course;
 			sourceTree = "<group>";
 		};
+		5A091C8B2BD25F1B00703F06 /* CourseDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				5A091C892BD25A1300703F06 /* CourseInfoView.swift */,
+			);
+			path = CourseDetailView;
+			sourceTree = "<group>";
+		};
+		5A091C8C2BD25F2800703F06 /* CourseAddView */ = {
+			isa = PBXGroup;
+			children = (
+				5AD102182BAEA26400932A2B /* DateSectionView.swift */,
+				5AD1022C2BB29D3E00932A2B /* DateSelectorView.swift */,
+				5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */,
+				5AD1021E2BAEBE1E00932A2B /* MemoSectionView.swift */,
+				5A1A54292BB900ED00BA46FB /* ColorSectionView.swift */,
+			);
+			path = CourseAddView;
+			sourceTree = "<group>";
+		};
 		5A1A54332BBAA94800BA46FB /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +238,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A64944B2BDB5B4F00E5B0DE /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				5A64944C2BDB5B5B00E5B0DE /* Parent.swift */,
+				5A64944E2BDB5B6200E5B0DE /* Child.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		5AB0ACC32BA50B1C001078FE /* Presents */ = {
@@ -276,9 +311,9 @@
 		5AB0ACCB2BA50BF0001078FE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				5A9EB31A2BA5D7EE00509229 /* AddCourseView.swift */,
+				5A9EB31A2BA5D7EE00509229 /* CourseAddView.swift */,
 				5AF2F7512BBF788600D7DD24 /* CourseDetailView.swift */,
-				5AC8C0242BC7CF4300DB48FF /* ChangeCourseView.swift */,
+				5AC8C0242BC7CF4300DB48FF /* CourseChangeView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -286,8 +321,8 @@
 		5AB0ACCC2BA50BFC001078FE /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5AC8C0282BC7D37300DB48FF /* CourseDetailView */,
-				5AC8C0232BC7CF1400DB48FF /* AddCourseView */,
+				5A091C8C2BD25F2800703F06 /* CourseAddView */,
+				5A091C8B2BD25F1B00703F06 /* CourseDetailView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -356,6 +391,7 @@
 		5AB2BCBA2B9C097700EC20E9 /* YourCourse */ = {
 			isa = PBXGroup;
 			children = (
+				5A64944B2BDB5B4F00E5B0DE /* Test */,
 				5AB0ACC32BA50B1C001078FE /* Presents */,
 				5A087BFD2BAA6549006E2676 /* Model */,
 				5AD1020F2BAD7A2B00932A2B /* Dependency */,
@@ -404,28 +440,9 @@
 				5AF2F7582BBFA0A100D7DD24 /* InputTextFeild.swift */,
 				5AF2F75A2BBFA22500D7DD24 /* MemoTextEditor.swift */,
 				5A091C792BCFEB9400703F06 /* DayPickerBtnText.swift */,
+				5A091C7E2BD149F700703F06 /* DateSelectionButton.swift */,
 			);
 			path = UIElement;
-			sourceTree = "<group>";
-		};
-		5AC8C0232BC7CF1400DB48FF /* AddCourseView */ = {
-			isa = PBXGroup;
-			children = (
-				5AD102182BAEA26400932A2B /* DateSectionView.swift */,
-				5AD1022C2BB29D3E00932A2B /* DateSelectorView.swift */,
-				5AD1021C2BAEBCB400932A2B /* TitleLocationSectionView.swift */,
-				5AD1021E2BAEBE1E00932A2B /* MemoSectionView.swift */,
-				5A1A54292BB900ED00BA46FB /* ColorSectionView.swift */,
-			);
-			path = AddCourseView;
-			sourceTree = "<group>";
-		};
-		5AC8C0282BC7D37300DB48FF /* CourseDetailView */ = {
-			isa = PBXGroup;
-			children = (
-				5AC8C0292BC7DA5600DB48FF /* EventListView.swift */,
-			);
-			path = CourseDetailView;
 			sourceTree = "<group>";
 		};
 		5AD1020F2BAD7A2B00932A2B /* Dependency */ = {
@@ -457,9 +474,7 @@
 		5AD102222BAEC8EC00932A2B /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
-				5A56ABD02BAB0234006628FF /* CourseAddFeature.swift */,
-				5AF2F7642BC1557A00D7DD24 /* CourseDetailFeature.swift */,
-				5AC8C02B2BC93F7300DB48FF /* CourseChangeFeature.swift */,
+				5A091C852BD1531F00703F06 /* CourseFeature.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -494,6 +509,7 @@
 		5AF2F7542BBF80DF00D7DD24 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5AC8C0292BC7DA5600DB48FF /* EventListView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -510,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				5AF2F75D2BBFC3CA00D7DD24 /* EventFeature.swift */,
+				5A091C872BD2169A00703F06 /* EventsFeature.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -669,6 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1A542C2BB903EA00BA46FB /* CourseColor.swift in Sources */,
+				5A091C862BD1531F00703F06 /* CourseFeature.swift in Sources */,
 				5AF2F75E2BBFC3CA00D7DD24 /* EventFeature.swift in Sources */,
 				5AD1022D2BB29D3E00932A2B /* DateSelectorView.swift in Sources */,
 				5A1A54392BBD3FEA00BA46FB /* CourseListView.swift in Sources */,
@@ -676,6 +694,8 @@
 				5AB2BCF22B9EAD8C00EC20E9 /* LargeTitleText.swift in Sources */,
 				5AF2F75B2BBFA22500D7DD24 /* MemoTextEditor.swift in Sources */,
 				5A1A54322BBAA7FB00BA46FB /* CalendarDaysView.swift in Sources */,
+				5A64944D2BDB5B5B00E5B0DE /* Parent.swift in Sources */,
+				5A091C8A2BD25A1300703F06 /* CourseInfoView.swift in Sources */,
 				5AF2F7612BBFD20700D7DD24 /* Event.swift in Sources */,
 				5AD1021D2BAEBCB400932A2B /* TitleLocationSectionView.swift in Sources */,
 				5A087C002BAA656D006E2676 /* CourseDate.swift in Sources */,
@@ -686,26 +706,26 @@
 				5AF2F7592BBFA0A100D7DD24 /* InputTextFeild.swift in Sources */,
 				5A1A54302BBAA6AA00BA46FB /* CalendarHeaderView.swift in Sources */,
 				5AB2BCEF2B9EA8AE00EC20E9 /* ArchiveView.swift in Sources */,
-				5AF2F7652BC1557A00D7DD24 /* CourseDetailFeature.swift in Sources */,
 				5AC8C02A2BC7DA5600DB48FF /* EventListView.swift in Sources */,
-				5A56ABD12BAB0234006628FF /* CourseAddFeature.swift in Sources */,
 				5AD102132BAD7C0000932A2B /* Course.swift in Sources */,
-				5AC8C0252BC7CF4300DB48FF /* ChangeCourseView.swift in Sources */,
+				5AC8C0252BC7CF4300DB48FF /* CourseChangeView.swift in Sources */,
 				5AF2F7572BBF9FCD00D7DD24 /* AddEventView.swift in Sources */,
 				5A091C7A2BCFEB9400703F06 /* DayPickerBtnText.swift in Sources */,
 				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
-				5A9EB31B2BA5D7EE00509229 /* AddCourseView.swift in Sources */,
+				5A9EB31B2BA5D7EE00509229 /* CourseAddView.swift in Sources */,
 				5A1A542A2BB900ED00BA46FB /* ColorSectionView.swift in Sources */,
+				5A091C7F2BD149F700703F06 /* DateSelectionButton.swift in Sources */,
 				5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */,
 				5AD102242BAEC9CD00932A2B /* DateExtension.swift in Sources */,
 				5AD102192BAEA26400932A2B /* DateSectionView.swift in Sources */,
 				5AB2BCEB2B9EA67600EC20E9 /* CourseView.swift in Sources */,
-				5AC8C02C2BC93F7300DB48FF /* CourseChangeFeature.swift in Sources */,
 				5AD1021F2BAEBE1E00932A2B /* MemoSectionView.swift in Sources */,
+				5A64944F2BDB5B6200E5B0DE /* Child.swift in Sources */,
 				5A1A54352BBAA95300BA46FB /* DateValue.swift in Sources */,
 				5A1A543B2BBE24F000BA46FB /* DateManager.swift in Sources */,
 				5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */,
 				5AD102292BB2942800932A2B /* ColorExtension.swift in Sources */,
+				5A091C882BD2169A00703F06 /* EventsFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
