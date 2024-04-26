@@ -10,17 +10,13 @@ import ComposableArchitecture
 import Dependencies
 
 struct EventFeature: Reducer {
-    struct State: Equatable {
-        @BindingState var course: Course
-        @BindingState var events: [Event]
-        @BindingState var title = ""
-        @BindingState var location = ""
-        @BindingState var memo = "메모"
+    struct State: Equatable {        
+        @BindingState var event = Event()
     }
     
     enum Action: BindableAction {
-        case tappedSaveButton
-        case eventSavedSuccessfully        
+        case tappedSaveButton(String, Int)
+        case setEvent
         case binding(BindingAction<State>)
     }
     
@@ -31,29 +27,21 @@ struct EventFeature: Reducer {
         
         Reduce { state, action in
             switch action {
-            case .tappedSaveButton:
-                let event = Event(
-                    title: state.title,
-                    location: state.location,
-                    memo: state.memo, 
-                    order: state.events.count
-                )
-                let id = state.course.id
+            case let .tappedSaveButton(courseId, order):
+                state.event.setOrder(order: order)
+                let event = state.event
                 
                 return .run { send in
-                    try await firestoreAPIClient.saveEvent(courseId: id, event: event)
-                    await send(.eventSavedSuccessfully)
+                    try await firestoreAPIClient.saveEvent(courseId: courseId, event: event)
+                    await send(.setEvent)
                 } catch: { error, send in
                     print(error)
                 }
                 
-            case .eventSavedSuccessfully:
-                print("Event가 성공적으로 저장되었습니다.")
-                state.title = ""
-                state.location = ""
-                state.memo = "메모"
+            case .setEvent:
+                state.event = Event()
                 return .none
-                                                                                   
+                
             case .binding:
                 return .none
             }

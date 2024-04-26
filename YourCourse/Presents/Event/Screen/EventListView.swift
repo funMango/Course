@@ -9,12 +9,13 @@ import SwiftUI
 import ComposableArchitecture
 
 struct EventListView: View {
-    @Binding var showAddEventView: Bool    
-    let store: StoreOf<CourseDetailFeature>
+    @State var showAddEventView = false
+    let store: StoreOf<EventsFeature>
+    let courseId: String
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            Section (header: Text("이벤트")) {
+            Section(header: Text("이벤트")) {
                 ForEach(viewStore.events, id: \.self) { event in
                     VStack(alignment: .leading) {
                         Text(event.title)
@@ -29,10 +30,9 @@ struct EventListView: View {
                         }
                     }
                 }
-                .onMove { from, to in
-                    viewStore.send(.eventsMove(from, to))
-                }
-                
+//                .onMove { from, to in
+//                    viewStore.send(.eventsMove(from, to))
+//                }                
                 Button {
                     showAddEventView.toggle()
                 } label: {
@@ -45,6 +45,9 @@ struct EventListView: View {
                         Spacer()
                     }
                 }
+            }            
+            .onAppear() {
+                viewStore.send(.fetchEvents(courseId))
             }
         }
     }
@@ -52,12 +55,10 @@ struct EventListView: View {
 
 #Preview {
     EventListView(
-        showAddEventView: .constant(false),
         store: Store(
-            initialState: CourseDetailFeature.State(
-                courseId: ""
-                ),
-            reducer: { CourseDetailFeature() }
-        )
+            initialState: EventsFeature.State(),
+            reducer: { EventsFeature() }
+        ),
+        courseId: ""
     )
 }

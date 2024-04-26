@@ -14,6 +14,8 @@ struct AddEventView: View {
     @State private var isPlusBtnDisable = true
     
     let store: StoreOf<EventFeature>
+    let courseId: String
+    let order: Int
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -21,14 +23,14 @@ struct AddEventView: View {
                 List {                                        
                     Section {
                         InputTextFeild(
-                            text: viewStore.$title,
+                            text: viewStore.$event.title,
                             title: "제목",
                             keyboardType: .default,
                             isFocused: $isFocused
                         )
                         
                         InputTextFeild(
-                            text: viewStore.$location,
+                            text: viewStore.$event.location,
                             title: "위치",
                             keyboardType: .default,
                             isFocused: $isFocused
@@ -37,19 +39,19 @@ struct AddEventView: View {
                     
                     Section {
                         MemoTextEditor(
-                            content: viewStore.$memo,
+                            content: viewStore.$event.memo,
                             placeholder: "메모",
                             isFocused: $isFocused
                         )
                     }
                 }
-                .onChange(of: viewStore.title) {
-                    isPlusBtnDisable = viewStore.title.isEmpty ? true : false
+                .onChange(of: viewStore.event.title) {
+                    isPlusBtnDisable = viewStore.event.title.isEmpty ? true : false
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            viewStore.send(.tappedSaveButton)
+                            viewStore.send(.tappedSaveButton(courseId, order))
                             showAddEventView.toggle()
                         } label: {
                             Text("추가")
@@ -76,27 +78,27 @@ struct AddEventView: View {
     }
 }
 
-#Preview {
-    AddEventView(
-        showAddEventView: .constant(false),
-        store: Store(
-            initialState: EventFeature.State(
-                course: Course(
-                    title: "Course",
-                    location: "Suwon",
-                    memo: "Testing...",
-                    startDate: Date(),
-                    endDate: Date(),
-                    color: .red
-                ), events: [
-                    Event(
-                        title: "서울여행",
-                        location: "서울특별시",
-                        memo: "서울 1박 2일 여행\n여행장소: 홍대, 강남, 광화문",
-                        order: 0
-                    )
-                ]
-            ),
-            reducer: { EventFeature() })
-        )
-}
+//#Preview {
+//    AddEventView(
+//        showAddEventView: .constant(false),
+//        store: Store(
+//            initialState: EventFeature.State(
+//                course: Course(
+//                    title: "Course",
+//                    location: "Suwon",
+//                    memo: "Testing...",
+//                    startDate: Date(),
+//                    endDate: Date(),
+//                    color: .red
+//                ), events: [
+//                    Event(
+//                        title: "서울여행",
+//                        location: "서울특별시",
+//                        memo: "서울 1박 2일 여행\n여행장소: 홍대, 강남, 광화문",
+//                        order: 0
+//                    )
+//                ]
+//            ),
+//            reducer: { EventFeature() })
+//        )
+//}
