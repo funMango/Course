@@ -22,13 +22,13 @@ struct CourseFeature {
         case saveCourse
         case fetchCourse
         case setCourse(Course)
-        case eventsFeature(EventsFeature.Action)        
+        case eventsFeature(EventsFeature.Action)
     }
     
     @Dependency(\.firestoreAPIClient) var firestoreAPIClient
     
     var body: some Reducer<State, Action> {
-        Scope(state: \.eventsFeature, action: /Action.eventsFeature) {
+        Scope(state: \.eventsFeature, action: \.eventsFeature) {
             EventsFeature()
         }
         

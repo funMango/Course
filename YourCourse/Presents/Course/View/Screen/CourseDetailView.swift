@@ -21,6 +21,7 @@ struct CourseDetailView: View {
                     CourseInfoView(store: self.store)
                                                                                
                     EventListView(
+                        showAddEventView: $showAddEventView,
                         store: self.store.scope(
                             state: \.eventsFeature,
                             action: \.eventsFeature
@@ -63,6 +64,17 @@ struct CourseDetailView: View {
                     CourseChangeView(
                         showChangeCourseView: $showChangeCourseView,
                         store: self.store
+                    )
+                }
+                .sheet(isPresented: $showAddEventView) {
+                    AddEventView(
+                        showAddEventView: $showAddEventView,
+                        store: Store(
+                            initialState: EventFeature.State(),
+                            reducer: { EventFeature() }
+                        ),
+                        courseId: viewStore.course.id,
+                        order: viewStore.eventsFeature.events.count
                     )
                 }
             }

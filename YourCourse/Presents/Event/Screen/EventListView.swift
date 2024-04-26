@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct EventListView: View {
-    @State var showAddEventView = false
+    @Binding var showAddEventView: Bool
     let store: StoreOf<EventsFeature>
     let courseId: String
     
@@ -55,6 +55,7 @@ struct EventListView: View {
 
 #Preview {
     EventListView(
+        showAddEventView: .constant(false),
         store: Store(
             initialState: EventsFeature.State(),
             reducer: { EventsFeature() }
