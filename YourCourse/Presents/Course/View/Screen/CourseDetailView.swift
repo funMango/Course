@@ -60,14 +60,14 @@ struct CourseDetailView: View {
                         }
                     }
                 }
-                .sheet(isPresented: $showChangeCourseView) {                                        
+                .sheet(isPresented: $showChangeCourseView) {
                     CourseChangeView(
                         showChangeCourseView: $showChangeCourseView,
                         store: self.store
                     )
                 }
                 .sheet(isPresented: $showAddEventView) {
-                    AddEventView(
+                    EventAddView(
                         showAddEventView: $showAddEventView,
                         store: Store(
                             initialState: EventFeature.State(),

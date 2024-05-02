@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct CourseChangeView: View {
-    @Binding var showChangeCourseView: Bool
+    @Binding var showChangeCourseView: Bool    
     @State var isSaveBtnDisable = false
     @State var showStartDateCalendar = false
     @State var showEndDateCalendar = false
@@ -19,44 +19,25 @@ struct CourseChangeView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack {
-                List {
+                List {                    
+                    TitleLocationSectionView(
+                        store: self.store,
+                        isFocused: $isFocused
+                    )
+                                        
+                    DateSectionView(store: self.store)
+                                                        
                     Section {
-                        InputTextFeild(
-                            text: viewStore.$course.title,
-                            title: "제목",
-                            keyboardType: .default,
-                            isFocused: $isFocused
-                        )
-                        
-                        InputTextFeild(
-                            text: viewStore.$course.location,
-                            title: "위치",
-                            keyboardType: .default,
-                            isFocused: $isFocused
+                        EventList(
+                            store: self.store.scope(
+                                state: \.eventsFeature,
+                                action: \.eventsFeature
+                            ), 
+                            coursId: viewStore.course.id
                         )
                     }
                     
-                    Section {
-                        DateSelectorView(
-                            showCalendar: $showStartDateCalendar,
-                            type: .start,
-                            store: self.store
-                        )
-                        
-                        DateSelectorView(
-                            showCalendar: $showEndDateCalendar,
-                            type: .end,
-                            store: self.store
-                        )
-                    }
-                                                            
-                    Section {
-                        MemoTextEditor(
-                            content: viewStore.$course.memo,
-                            placeholder: "메모",
-                            isFocused: $isFocused
-                        )
-                    }
+                    MemoSectionView(store: self.store, isFocused: $isFocused)
                     
                     ColorSectionView(store: self.store)
                 }
