@@ -16,20 +16,10 @@ struct EventListView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             Section(header: Text("이벤트")) {
-                ForEach(viewStore.events, id: \.self) { event in
-                    VStack(alignment: .leading) {
-                        Text(event.title)
-                        
-                        if !event.location.isEmpty {
-                            Spacer()
-                                .frame(height: 5)
-                            
-                            Text(event.location)
-                                .foregroundStyle(.gray)
-                                .font(.system(size: 13))
-                        }
-                    }
-                }
+                EventList(
+                    store: self.store,
+                    coursId: courseId
+                )
 //                .onMove { from, to in
 //                    viewStore.send(.eventsMove(from, to))
 //                }                
