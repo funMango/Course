@@ -14,6 +14,7 @@ protocol FirestoreAPI {
     func saveCourse(course: Course) async throws
     func fetchCourse(courseId: String) async throws -> AsyncThrowingStream<Course, Error>
     func fetchCourses() async throws -> AsyncThrowingStream<[Course], Error>
+    func fetchEvent(courseId:String, eventId: String) async throws ->  AsyncThrowingStream<Event, Error>
     func saveEvent(courseId: String, event: Event) async throws
     func fetchEvents(courseId: String) async throws -> AsyncThrowingStream<[Event], Error>
     func saveEvents(courseId: String, events: [Event]) async throws    
@@ -87,6 +88,27 @@ class FirestoreAPIClient: FirestoreAPI {
         }
     }
     
+    func fetchEvent(courseId:String, eventId: String) async throws ->  AsyncThrowingStream<Event, Error> {
+        AsyncThrowingStream<Event, Error> { [weak self] continuation in
+            let collection = self?.db.collection("Course").document(courseId).collection("Event").document(eventId)
+            
+            _ = collection?.addSnapshotListener{ (querySnapshot, error) in
+                if let error = error {
+                    continuation.finish(throwing: error)
+                    return
+                }
+                                
+                do {
+                    if let event = try querySnapshot?.data(as: Event.self) {
+                        continuation.yield(event)
+                    }
+                } catch {
+                    continuation.finish(throwing: error)
+                }
+            }
+        }
+    }
+    
     func saveEvent(courseId: String, event: Event) async throws {
         let eventRef = db.collection("Course").document(courseId).collection("Event").document(event.id)
         
@@ -136,6 +158,8 @@ class FirestoreAPIClient: FirestoreAPI {
             }
         }
     }
+    
+    
 }
 
 extension DependencyValues {

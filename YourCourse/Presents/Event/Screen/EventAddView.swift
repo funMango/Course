@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct AddEventView: View {
+struct EventAddView: View {
     @Binding var showAddEventView: Bool
     @FocusState var isFocused: Bool
     @State private var isPlusBtnDisable = true
