@@ -35,6 +35,7 @@
 		5A9EB31B2BA5D7EE00509229 /* CourseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9EB31A2BA5D7EE00509229 /* CourseAddView.swift */; };
 		5AAA58222BE34EE000B6D243 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA58212BE34EE000B6D243 /* EventList.swift */; };
 		5AAA58282BE3536B00B6D243 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA58272BE3536B00B6D243 /* EventDetailView.swift */; };
+		5AAA582A2BE3759300B6D243 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA58292BE3759300B6D243 /* EventCell.swift */; };
 		5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */; };
 		5AB2BCC02B9C097800EC20E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */; };
 		5AB2BCC32B9C097800EC20E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCC22B9C097800EC20E9 /* Preview Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		5A9EB31A2BA5D7EE00509229 /* CourseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAddView.swift; sourceTree = "<group>"; };
 		5AAA58212BE34EE000B6D243 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		5AAA58272BE3536B00B6D243 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		5AAA58292BE3759300B6D243 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		5AB2BCB82B9C097700EC20E9 /* YourCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCourseApp.swift; sourceTree = "<group>"; };
 		5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				5AAA58212BE34EE000B6D243 /* EventList.swift */,
+				5AAA58292BE3759300B6D243 /* EventCell.swift */,
 			);
 			path = EventListView;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				5AF2F7572BBF9FCD00D7DD24 /* EventAddView.swift in Sources */,
 				5A091C7A2BCFEB9400703F06 /* DayPickerBtnText.swift in Sources */,
 				5AB2BCE92B9EA5E000EC20E9 /* TabBarView.swift in Sources */,
+				5AAA582A2BE3759300B6D243 /* EventCell.swift in Sources */,
 				5A9EB31B2BA5D7EE00509229 /* CourseAddView.swift in Sources */,
 				5A1A542A2BB900ED00BA46FB /* ColorSectionView.swift in Sources */,
 				5A091C7F2BD149F700703F06 /* DateSelectionButton.swift in Sources */,

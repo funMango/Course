@@ -41,7 +41,7 @@ struct EventFeature: Reducer {
                 }
             
             case let .fetchEvent(courseId):
-                let eventId = state.event.id                
+                let eventId = state.event.id
                 return .run { send in
                     for try await event in try await firestoreAPIClient.fetchEvent(courseId: courseId, eventId: eventId) {
                         await send(.setEvent(event))

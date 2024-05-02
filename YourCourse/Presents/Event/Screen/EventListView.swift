@@ -18,11 +18,11 @@ struct EventListView: View {
             Section(header: Text("이벤트")) {
                 EventList(
                     store: self.store,
-                    coursId: courseId
+                    courseId: courseId
                 )
-//                .onMove { from, to in
-//                    viewStore.send(.eventsMove(from, to))
-//                }                
+                //                .onMove { from, to in
+                //                    viewStore.send(.eventsMove(from, to))
+                //                }
                 Button {
                     showAddEventView.toggle()
                 } label: {
@@ -35,7 +35,7 @@ struct EventListView: View {
                         Spacer()
                     }
                 }
-            }            
+            }
             .onAppear() {
                 viewStore.send(.fetchEvents(courseId))
             }
