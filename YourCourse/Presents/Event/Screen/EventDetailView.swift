@@ -10,6 +10,7 @@ import ComposableArchitecture
 
 struct EventDetailView: View {
     @Environment(\.dismiss) var dismiss
+    @State var showEventChangeView = false
     let store: StoreOf<EventFeature>
     let courseId: String
     
@@ -44,7 +45,7 @@ struct EventDetailView: View {
                 .toolbar() {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            
+                            showEventChangeView.toggle()
                         } label: {
                             Text("편집")
                                 .foregroundStyle(.red)
@@ -59,6 +60,13 @@ struct EventDetailView: View {
                                 .foregroundStyle(.black)
                         }
                     }
+                }
+                .sheet(isPresented: $showEventChangeView) {
+                    EventChangeView(
+                        showEvnetChangeView: $showEventChangeView,
+                        store: self.store,
+                        courseId: courseId
+                    )
                 }
             }
         }
