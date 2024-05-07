@@ -20,9 +20,7 @@ struct EventListView: View {
                     store: self.store,
                     courseId: courseId
                 )
-                //                .onMove { from, to in
-                //                    viewStore.send(.eventsMove(from, to))
-                //                }
+                
                 Button {
                     showAddEventView.toggle()
                 } label: {

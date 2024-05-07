@@ -36,6 +36,7 @@
 		5AAA58222BE34EE000B6D243 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA58212BE34EE000B6D243 /* EventList.swift */; };
 		5AAA58282BE3536B00B6D243 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA58272BE3536B00B6D243 /* EventDetailView.swift */; };
 		5AAA582A2BE3759300B6D243 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA58292BE3759300B6D243 /* EventCell.swift */; };
+		5AAA582C2BE37C1400B6D243 /* EventChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA582B2BE37C1400B6D243 /* EventChangeView.swift */; };
 		5AB2BCBC2B9C097700EC20E9 /* YourCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */; };
 		5AB2BCC02B9C097800EC20E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */; };
 		5AB2BCC32B9C097800EC20E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2BCC22B9C097800EC20E9 /* Preview Assets.xcassets */; };
@@ -109,6 +110,7 @@
 		5AAA58212BE34EE000B6D243 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		5AAA58272BE3536B00B6D243 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		5AAA58292BE3759300B6D243 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		5AAA582B2BE37C1400B6D243 /* EventChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventChangeView.swift; sourceTree = "<group>"; };
 		5AB2BCB82B9C097700EC20E9 /* YourCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB2BCBB2B9C097700EC20E9 /* YourCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCourseApp.swift; sourceTree = "<group>"; };
 		5AB2BCBF2B9C097800EC20E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 				5AC8C0292BC7DA5600DB48FF /* EventListView.swift */,
 				5AF2F7562BBF9FCD00D7DD24 /* EventAddView.swift */,
 				5AAA58272BE3536B00B6D243 /* EventDetailView.swift */,
+				5AAA582B2BE37C1400B6D243 /* EventChangeView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				5A1A543B2BBE24F000BA46FB /* DateManager.swift in Sources */,
 				5AD102112BAD7A7100932A2B /* FirestoreAPIClient.swift in Sources */,
 				5AD102292BB2942800932A2B /* ColorExtension.swift in Sources */,
+				5AAA582C2BE37C1400B6D243 /* EventChangeView.swift in Sources */,
 				5A091C882BD2169A00703F06 /* EventsFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
