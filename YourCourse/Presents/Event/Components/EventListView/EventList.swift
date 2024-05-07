@@ -14,7 +14,7 @@ struct EventList: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            ForEach(viewStore.events, id: \.self) { event in
+            ForEach(viewStore.events.sorted(by: { $0.order < $1.order }), id: \.self) { event in
                 NavigationLink {
                     EventDetailView(
                         store: Store(
