@@ -16,6 +16,7 @@ struct EventFeature: Reducer {
     
     enum Action: BindableAction {
         case tappedSaveButton(String, Int)
+        case saveEvent(String)
         case fetchEvent(String)
         case setEvent(Event)
         case binding(BindingAction<State>)
@@ -30,14 +31,19 @@ struct EventFeature: Reducer {
             switch action {
             case let .tappedSaveButton(courseId, order):
                 state.event.setOrder(order: order)
+                if state.event.memo == "메모" {
+                    state.event.memo = ""
+                }
+                return .send(.saveEvent(courseId))
+            
+            case let .saveEvent(courseId):
                 let event = state.event
-                
                 return .run { send in
                     try await firestoreAPIClient.saveEvent(courseId: courseId, event: event)
                 } catch: { error, send in
                     print(error)
                 }
-            
+                            
             case let .fetchEvent(courseId):
                 let eventId = state.event.id
                 return .run { send in
