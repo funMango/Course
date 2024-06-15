@@ -26,7 +26,8 @@ struct CourseDetailView: View {
                             state: \.eventsFeature,
                             action: \.eventsFeature
                         ),
-                        courseId: viewStore.course.id
+                        courseId: viewStore.course.id,
+                        canEdit: false
                     )
                                                             
                     if !viewStore.course.memo.isEmpty {

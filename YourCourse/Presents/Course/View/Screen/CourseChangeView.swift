@@ -33,7 +33,8 @@ struct CourseChangeView: View {
                                 state: \.eventsFeature,
                                 action: \.eventsFeature
                             ), 
-                            courseId: viewStore.course.id
+                            courseId: viewStore.course.id,
+                            canEdit: true
                         )
                     }
                     

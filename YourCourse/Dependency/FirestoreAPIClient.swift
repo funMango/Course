@@ -17,7 +17,8 @@ protocol FirestoreAPI {
     func fetchEvent(courseId:String, eventId: String) async throws ->  AsyncThrowingStream<Event, Error>
     func saveEvent(courseId: String, event: Event) async throws
     func fetchEvents(courseId: String) async throws -> AsyncThrowingStream<[Event], Error>
-    func saveEvents(courseId: String, events: [Event]) async throws    
+    func saveEvents(courseId: String, events: [Event], oldEvents: [Event]?) async throws
+    func deleteEvents(courseId: String, events: [Event]) async throws
 }
 
 enum FirestoreAPIClientKey: DependencyKey {
@@ -26,6 +27,8 @@ enum FirestoreAPIClientKey: DependencyKey {
 
 class FirestoreAPIClient: FirestoreAPI {
     private let db = Firestore.firestore()
+    
+    // MARK: Course
             
     func saveCourse(course: Course) async throws {
         let courseRef = db.collection("Course").document(course.id)
@@ -88,6 +91,8 @@ class FirestoreAPIClient: FirestoreAPI {
         }
     }
     
+    // MARK: Event
+    
     func fetchEvent(courseId:String, eventId: String) async throws ->  AsyncThrowingStream<Event, Error> {
         AsyncThrowingStream<Event, Error> { [weak self] continuation in
             let collection = self?.db.collection("Course").document(courseId).collection("Event").document(eventId)
@@ -127,6 +132,18 @@ class FirestoreAPIClient: FirestoreAPI {
         }
     }
     
+    func deleteEvent(courseId: String, event: Event) async throws {
+        let eventRef = db.collection("Course").document(courseId).collection("Event").document(event.id)
+        
+        do {
+          try await eventRef.delete()
+        } catch {
+          print("Error removing document: \(error)")
+        }
+    }
+    
+    // MARK: Events
+    
     func fetchEvents(courseId: String) async throws -> AsyncThrowingStream<[Event], Error> {
         AsyncThrowingStream<[Event], Error> { [weak self] continuation in
             let collection = self?.db.collection("Course").document(courseId).collection("Event")
@@ -149,7 +166,11 @@ class FirestoreAPIClient: FirestoreAPI {
         }
     }
     
-    func saveEvents(courseId: String, events: [Event]) async throws {
+    func saveEvents(courseId: String, events: [Event], oldEvents: [Event]?) async throws {
+        if let events = oldEvents {
+            try await deleteEvents(courseId: courseId, events: events)
+        }
+        
         for event in events {
             do {
                 try await saveEvent(courseId: courseId, event: event)
@@ -159,7 +180,15 @@ class FirestoreAPIClient: FirestoreAPI {
         }
     }
     
-    
+    func deleteEvents(courseId: String, events: [Event]) async throws {
+        for event in events {
+            do {
+                try await deleteEvent(courseId: courseId, event: event)
+            } catch {
+                throw error
+            }
+        }
+    }
 }
 
 extension DependencyValues {

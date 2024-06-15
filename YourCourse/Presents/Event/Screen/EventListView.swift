@@ -12,13 +12,15 @@ struct EventListView: View {
     @Binding var showAddEventView: Bool
     let store: StoreOf<EventsFeature>
     let courseId: String
+    let canEdit: Bool
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             Section(header: Text("이벤트")) {
                 EventList(
                     store: self.store,
-                    courseId: courseId
+                    courseId: courseId,
+                    canEdit: canEdit
                 )
                 
                 Button {
@@ -45,9 +47,10 @@ struct EventListView: View {
     EventListView(
         showAddEventView: .constant(false),
         store: Store(
-            initialState: EventsFeature.State(),
+            initialState: EventsFeature.State(courseId: ""),
             reducer: { EventsFeature() }
         ),
-        courseId: ""
+        courseId: "",
+        canEdit: false
     )
 }

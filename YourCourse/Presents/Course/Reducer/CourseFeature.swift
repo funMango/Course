@@ -22,6 +22,7 @@ struct CourseFeature {
         case saveCourse
         case fetchCourse
         case setCourse(Course)
+        case setEventsFeature(String)
         case eventsFeature(EventsFeature.Action)
     }
     
@@ -46,6 +47,7 @@ struct CourseFeature {
                 let course = state.course
                 return .run { send in
                     try await firestoreAPIClient.saveCourse(course: course)
+                    await send(.eventsFeature(.saveEvents(course.id)))
                 } catch: { error, send in
                     print(error)
                 }
@@ -60,7 +62,12 @@ struct CourseFeature {
                 
             case let .setCourse(course):
                 state.course = course
-                return .none
+                return .send(.setEventsFeature(course.id))
+            
+            case let .setEventsFeature(courseId):
+                return .run { send in
+                    await send(.eventsFeature(.setCourseId(courseId)))
+                }
                                             
             case .binding:
                 return .none
